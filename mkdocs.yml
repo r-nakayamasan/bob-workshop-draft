@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: My GitHub Pages Site
+site_url: https://YOUR_NAME.github.io/REPO_NAME/
+theme:
+  name: material
