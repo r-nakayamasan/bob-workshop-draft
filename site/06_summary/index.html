@@ -1,0 +1,2148 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://r-nakayamasan.github.io/bob-workshop-draft/06_summary/">
+      
+      
+        <link rel="prev" href="../05_lab3/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>まとめと次のステップ - Bob Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ibm-bob" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Bob Workshop" class="md-header__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bob Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              まとめと次のステップ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_preparation_and_setup/" class="md-tabs__link">
+          
+  
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  まとめ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bob Workshop" class="md-nav__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    Bob Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    はじめに
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    はじめに
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_preparation_and_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    事前準備とセットアップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Bob の紹介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    まとめ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめと次のステップ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめと次のステップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: チュートリアルの総括
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: チュートリアルの総括">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習内容の振り返り
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        達成度チェック
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要なポイント
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: 実践テクニック
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: 実践テクニック">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 効果的なプロンプト作成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 効果的なプロンプト作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 良い例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ 悪い例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロンプト作成のコツ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. モード活用戦略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. モード活用戦略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        モード選択のフローチャート
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 自動化のコツ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自動化のコツ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        初心者の場合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        慣れてきたら
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自動承認の設定タイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. レビュー機能の活用法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. レビュー機能の活用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な使い方
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        レビューのタイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        優先度に基づく対応
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        レビュー結果の活用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: リファレンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: リファレンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よくある質問（FAQ）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よくある質問（FAQ）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な質問
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術的な質問
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接続エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拡張機能が動作しない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        パフォーマンスが遅い
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ファイルが認識されない
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用語集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソース集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="リソース集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式リソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コミュニティ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習リソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="次のステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実践してみよう
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        さらに学ぶには
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: チュートリアルの総括
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: チュートリアルの総括">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習内容の振り返り
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        達成度チェック
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要なポイント
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: 実践テクニック
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: 実践テクニック">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 効果的なプロンプト作成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 効果的なプロンプト作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 良い例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ 悪い例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロンプト作成のコツ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. モード活用戦略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. モード活用戦略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        モード選択のフローチャート
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 自動化のコツ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自動化のコツ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        初心者の場合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        慣れてきたら
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自動承認の設定タイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. レビュー機能の活用法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. レビュー機能の活用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な使い方
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        レビューのタイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        優先度に基づく対応
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        レビュー結果の活用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: リファレンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: リファレンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よくある質問（FAQ）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よくある質問（FAQ）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な質問
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術的な質問
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接続エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拡張機能が動作しない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        パフォーマンスが遅い
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ファイルが認識されない
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用語集
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソース集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="リソース集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式リソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コミュニティ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習リソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="次のステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実践してみよう
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        さらに学ぶには
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ibm-bob">IBM Bob 活用ガイド</h1>
+<p>このガイドでは、チュートリアルで学んだ内容を振り返り、IBM Bobをより効果的に活用するための実践テクニックとリファレンス情報を提供します。</p>
+<hr />
+<h2 id="part-1">Part 1: チュートリアルの総括</h2>
+<h3 id="_1">学習内容の振り返り</h3>
+<p>このチュートリアルでは、IBM Bobを使った実践的な開発フローを体験しました：</p>
+<p><strong>LAB1: ゼロからのサイト構築</strong>
+- 要件定義から実装までの一連の流れ
+- Orchestrateモードによる自動タスク分解
+- HTML/CSS/JavaScriptによるFAQサイトの作成</p>
+<p><strong>LAB2: 既存ファイルの活用と機能拡張</strong>
+- 既存ファイル（qa.md）の読み込みと活用
+- 翻訳機能の実装
+- 画像の挿入とデザイン調整</p>
+<p><strong>LAB3: コード品質の向上</strong>
+- Advancedモードへの切り替え
+- <code>/review</code>コマンドによるコードレビュー
+- 指摘事項の優先順位付けと対応</p>
+<h3 id="_2">達成度チェック</h3>
+<p>以下の項目を確認して、学習の定着度を確認しましょう：</p>
+<ul>
+<li>[ ] IBM Bobの基本的な画面構成を理解している</li>
+<li>[ ] 各モード（Orchestrate、Plan、Code、Ask、Advanced）の違いを説明できる</li>
+<li>[ ] 効果的なプロンプトを書くことができる</li>
+<li>[ ] ファイルの読み込みと編集の承認フローを理解している</li>
+<li>[ ] 自動承認機能の使い分けができる</li>
+<li>[ ] レビュー機能を使ってコード品質を確認できる</li>
+<li>[ ] TODOリストを活用してタスクを管理できる</li>
+</ul>
+<h3 id="_3">重要なポイント</h3>
+<p><strong>1. 段階的なアプローチ</strong>
+- 大きなタスクは小さなステップに分解
+- 各ステップで結果を確認しながら進める
+- 問題が発生したら早めに軌道修正</p>
+<p><strong>2. 適切なモード選択</strong>
+- タスクの性質に応じてモードを使い分ける
+- 複雑なタスクはOrchestrateモードから開始
+- 単純な質問はAskモードで効率的に</p>
+<p><strong>3. コミュニケーション</strong>
+- 具体的で明確な指示を心がける
+- 必要な情報は事前に整理して提供
+- 期待する結果を明確に伝える</p>
+<hr />
+<h2 id="part-2">Part 2: 実践テクニック</h2>
+<h3 id="1">1. 効果的なプロンプト作成</h3>
+<p>プロンプトの質が、IBM Bobの出力品質を大きく左右します。</p>
+<h4 id="_4">✅ 良い例</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>以下の機能を持つFAQサイトを作成してください：
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>【機能要件】
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- 検索窓でキーワード検索
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- カテゴリ絞り込み
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- アコーディオン形式で質問と回答を表示
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>- 日本語翻訳済みのFAQデータを使用
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>【技術要件】
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- HTML/CSS/JavaScriptのみで実装
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>- ローカル環境で動作
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- レスポンシブデザイン
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>【データ】
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- qa.mdファイルを参照
+</span></code></pre></div>
+<p><strong>良い点:</strong>
+- 機能要件が明確
+- 技術的な制約が指定されている
+- 参照すべきファイルが明示されている
+- 構造化されていて読みやすい</p>
+<h4 id="_5">❌ 悪い例</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>FAQサイトを作って
+</span></code></pre></div>
+<p><strong>問題点:</strong>
+- 要件が曖昧
+- 技術スタックが不明
+- データソースが不明
+- 期待する機能が不明確</p>
+<h4 id="_6">プロンプト作成のコツ</h4>
+<ol>
+<li><strong>5W1Hを意識する</strong></li>
+<li>What: 何を作るのか</li>
+<li>Why: なぜ必要なのか</li>
+<li>Who: 誰が使うのか</li>
+<li>When: いつまでに必要か</li>
+<li>Where: どこで動作するのか</li>
+<li>
+<p>How: どのように実装するのか</p>
+</li>
+<li>
+<p><strong>段階的に詳細化する</strong></p>
+</li>
+<li>最初は大まかな要件から</li>
+<li>Bobの質問に答えながら詳細化</li>
+<li>
+<p>必要に応じて追加情報を提供</p>
+</li>
+<li>
+<p><strong>例を示す</strong></p>
+</li>
+<li>期待する出力の例を提示</li>
+<li>参考となるサイトやコードを共有</li>
+<li>具体的なイメージを伝える</li>
+</ol>
+<h3 id="2">2. モード活用戦略</h3>
+<p>各モードの特性を理解し、適切に使い分けることで効率が向上します。</p>
+<table>
+<thead>
+<tr>
+<th>モード</th>
+<th>使用場面</th>
+<th>特徴</th>
+<th>使用例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orchestrate</strong></td>
+<td>複雑なプロジェクト全体</td>
+<td>複数モードを自動調整</td>
+<td>新規アプリケーション開発</td>
+</tr>
+<tr>
+<td><strong>Plan</strong></td>
+<td>設計・要件定義</td>
+<td>仕様書生成</td>
+<td>アーキテクチャ設計</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>コード作成・修正</td>
+<td>実装に特化</td>
+<td>バグ修正、機能追加</td>
+</tr>
+<tr>
+<td><strong>Ask</strong></td>
+<td>質問・相談</td>
+<td>情報提供</td>
+<td>技術的な質問、調査</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>複雑なタスク</td>
+<td>拡張機能利用</td>
+<td>コードレビュー、リファクタリング</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">モード選択のフローチャート</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>タスクの性質は？
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├─ 質問・情報収集 → Ask
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├─ 設計・計画 → Plan
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├─ コード実装
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│  ├─ 単純な修正 → Code
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│  └─ 複雑な実装 → Orchestrate
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>└─ レビュー・分析 → Advanced
+</span></code></pre></div>
+<h3 id="3">3. 自動化のコツ</h3>
+<p>自動承認機能を適切に使うことで、作業効率が大幅に向上します。</p>
+<h4 id="_8">初心者の場合</h4>
+<p><strong>推奨設定:</strong>
+- 自動承認はオフ
+- 各ステップで内容を確認
+- Bobの動作パターンを学習</p>
+<p><strong>メリット:</strong>
+- 安全性が高い
+- 学習効果が高い
+- 予期しない変更を防げる</p>
+<h4 id="_9">慣れてきたら</h4>
+<p><strong>推奨設定:</strong>
+- ファイル書き込みを自動承認
+- 定型的な操作を自動化
+- 重要な操作は手動確認</p>
+<p><strong>メリット:</strong>
+- 作業効率が向上
+- 反復作業が削減
+- フローが中断されない</p>
+<h4 id="_10">自動承認の設定タイミング</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>プロジェクトの段階に応じて調整：
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>【初期段階】
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- 自動承認: オフ
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- 理由: 要件が固まっていない
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>【開発段階】
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>- 自動承認: 部分的にオン
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>- 理由: 定型作業が増える
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>【保守段階】
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>- 自動承認: 選択的にオン
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>- 理由: 影響範囲が限定的
+</span></code></pre></div>
+<h3 id="4">4. レビュー機能の活用法</h3>
+<p>定期的なコードレビューで品質を維持します。</p>
+<h4 id="_11">基本的な使い方</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/review
+</span></code></pre></div>
+<p>このコマンドで、プロジェクト全体のコードレビューが実行されます。</p>
+<h4 id="_12">レビューのタイミング</h4>
+<ol>
+<li><strong>機能実装後</strong></li>
+<li>新機能追加時</li>
+<li>大きな変更後</li>
+<li>
+<p>マージ前</p>
+</li>
+<li>
+<p><strong>定期的なレビュー</strong></p>
+</li>
+<li>週次レビュー</li>
+<li>スプリント終了時</li>
+<li>
+<p>リリース前</p>
+</li>
+<li>
+<p><strong>問題発生時</strong></p>
+</li>
+<li>バグ発見時</li>
+<li>パフォーマンス低下時</li>
+<li>セキュリティ懸念時</li>
+</ol>
+<h4 id="_13">優先度に基づく対応</h4>
+<p>レビュー結果は優先度順に対応します：</p>
+<ol>
+<li><strong>セキュリティ問題（最優先）</strong></li>
+<li>即座に対応</li>
+<li>他の作業を中断してでも修正</li>
+<li>
+<p>例: SQLインジェクション、XSS脆弱性</p>
+</li>
+<li>
+<p><strong>パフォーマンス問題</strong></p>
+</li>
+<li>影響度を評価</li>
+<li>計画的に対応</li>
+<li>
+<p>例: N+1クエリ、メモリリーク</p>
+</li>
+<li>
+<p><strong>保守性の問題</strong></p>
+</li>
+<li>リファクタリング計画に組み込む</li>
+<li>段階的に改善</li>
+<li>例: コードの重複、命名規則</li>
+</ol>
+<h4 id="_14">レビュー結果の活用</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>レビュー → 分類 → 優先順位付け → 対応計画 → 実装 → 再レビュー
+</span></code></pre></div>
+<hr />
+<h2 id="part-3">Part 3: リファレンス</h2>
+<h3 id="faq">よくある質問（FAQ）</h3>
+<h4 id="_15">基本的な質問</h4>
+<p><strong>Q: IBM Bobは無料で使えますか？</strong><br />
+A: 無料プランと有料プランがあります。基本機能は無料プランで利用可能です。詳細は公式サイトをご確認ください。</p>
+<p><strong>Q: どのプログラミング言語に対応していますか？</strong><br />
+A: JavaScript、Python、Java、C++、Go、Rust、TypeScript、PHP、Ruby、Swiftなど、主要な言語に対応しています。</p>
+<p><strong>Q: オフラインでも使えますか？</strong><br />
+A: 基本的にはインターネット接続が必要ですが、一部のキャッシュ機能はオフラインでも利用可能です。</p>
+<p><strong>Q: 生成されたコードの著作権は？</strong><br />
+A: 生成されたコードの著作権はユーザーに帰属します。ただし、利用規約をご確認ください。</p>
+<p><strong>Q: セキュリティは大丈夫ですか？</strong><br />
+A: IBM Cloudのセキュリティ基準に準拠しており、コードは暗号化されて送信されます。機密情報の取り扱いには注意してください。</p>
+<h4 id="_16">技術的な質問</h4>
+<p><strong>Q: 既存のプロジェクトに途中から導入できますか？</strong><br />
+A: はい、可能です。プロジェクトフォルダを開くだけで、既存のコードを認識して作業できます。</p>
+<p><strong>Q: チーム開発で使えますか？</strong><br />
+A: はい、各メンバーが個別にIBM Bobを使用できます。ただし、コードの競合には注意が必要です。</p>
+<p><strong>Q: 生成されたコードの品質は？</strong><br />
+A: 一般的に高品質ですが、必ずレビューと動作確認を行ってください。特にセキュリティ面は重要です。</p>
+<p><strong>Q: カスタマイズはできますか？</strong><br />
+A: 設定ファイル（.bobignore等）でカスタマイズ可能です。詳細は公式ドキュメントを参照してください。</p>
+<h3 id="_17">トラブルシューティング</h3>
+<h4 id="_18">接続エラー</h4>
+<p><strong>症状:</strong>
+- IBM Bobが応答しない
+- タイムアウトエラーが発生</p>
+<p><strong>対処法:</strong>
+1. Wi-Fi接続を確認
+2. プロキシ設定を確認
+3. ファイアウォール設定を確認
+4. IBM Bobを再起動
+5. ネットワーク管理者に相談</p>
+<h4 id="_19">拡張機能が動作しない</h4>
+<p><strong>症状:</strong>
+- コマンドが実行されない
+- ファイルが認識されない</p>
+<p><strong>対処法:</strong>
+1. VS Codeを再起動
+2. フォルダーを開き直す
+3. 設定ファイル（settings.json）を確認
+4. 拡張機能を再インストール
+5. VS Codeのバージョンを確認</p>
+<h4 id="_20">パフォーマンスが遅い</h4>
+<p><strong>症状:</strong>
+- 応答が遅い
+- 処理に時間がかかる</p>
+<p><strong>対処法:</strong>
+1. ネットワーク接続速度を確認
+2. 不要なファイルやタブを閉じる
+3. より小さいモデルを使用
+4. .bobignoreで不要なファイルを除外
+5. プロジェクトサイズを確認</p>
+<h4 id="_21">ファイルが認識されない</h4>
+<p><strong>症状:</strong>
+- 作成したファイルが表示されない
+- 変更が反映されない</p>
+<p><strong>対処法:</strong>
+1. エクスプローラーを更新（F5）
+2. フォルダーを開き直す
+3. ファイルパスを確認
+4. .bobignoreの設定を確認
+5. ファイルの保存を確認</p>
+<h3 id="_22">用語集</h3>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orchestrate</strong></td>
+<td>複数のモードを自動的に切り替えながらタスクを実行するモード</td>
+</tr>
+<tr>
+<td><strong>Plan</strong></td>
+<td>要件定義や設計書の作成に特化したモード</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>コードの作成・編集に特化したモード</td>
+</tr>
+<tr>
+<td><strong>Ask</strong></td>
+<td>質問や情報収集に特化したモード</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>高度な機能（MCP等）を利用できるモード</td>
+</tr>
+<tr>
+<td><strong>自動承認</strong></td>
+<td>Bobの操作を自動的に承認する機能</td>
+</tr>
+<tr>
+<td><strong>TODOリスト</strong></td>
+<td>タスクの進捗を管理するチェックリスト</td>
+</tr>
+<tr>
+<td><strong>.bobignore</strong></td>
+<td>Bobに読み取らせないファイルを指定する設定ファイル</td>
+</tr>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Model Context Protocol - 外部ツールとの連携機能</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_23">リソース集</h3>
+<h4 id="_24">公式リソース</h4>
+<ul>
+<li><strong>IBM Bob公式サイト</strong>: [URL]</li>
+<li><strong>公式ドキュメント</strong>: [URL]</li>
+<li><strong>リリースノート</strong>: [URL]</li>
+<li><strong>サポートページ</strong>: [URL]</li>
+</ul>
+<h4 id="_25">コミュニティ</h4>
+<ul>
+<li><strong>ユーザーフォーラム</strong>: [URL]</li>
+<li><strong>GitHub Issues</strong>: [URL]</li>
+<li><strong>Slack/Discord</strong>: [URL]</li>
+</ul>
+<h4 id="_26">学習リソース</h4>
+<ul>
+<li><strong>チュートリアル</strong>: 本ドキュメント</li>
+<li><strong>サンプルプロジェクト</strong>: [URL]</li>
+<li><strong>ビデオチュートリアル</strong>: [URL]</li>
+<li><strong>ブログ記事</strong>: [URL]</li>
+</ul>
+<hr />
+<h2 id="_27">次のステップ</h2>
+<h3 id="_28">実践してみよう</h3>
+<ol>
+<li><strong>自分のプロジェクトで試す</strong></li>
+<li>小さなタスクから始める</li>
+<li>段階的に複雑なタスクに挑戦</li>
+<li>
+<p>失敗を恐れずに実験</p>
+</li>
+<li>
+<p><strong>他のモードを探索</strong></p>
+</li>
+<li>各モードの特性を理解</li>
+<li>適切な使い分けを習得</li>
+<li>
+<p>効率的なワークフローを確立</p>
+</li>
+<li>
+<p><strong>チーム開発で活用</strong></p>
+</li>
+<li>チームメンバーと知識を共有</li>
+<li>ベストプラクティスを確立</li>
+<li>生産性向上を測定</li>
+</ol>
+<h3 id="_29">さらに学ぶには</h3>
+<ul>
+<li>公式ドキュメントを読む</li>
+<li>コミュニティに参加する</li>
+<li>サンプルプロジェクトを試す</li>
+<li>定期的にアップデートをチェック</li>
+</ul>
+<hr />
+<p><strong>おめでとうございます！</strong> 🎉</p>
+<p>IBM Bobのチュートリアルを完了しました。学んだ知識を活かして、より効率的な開発を実現してください。</p>
+<hr />
+<p><strong>前へ</strong>: <a href="../05_lab3/">LAB3: コードレビューと品質向上</a> | <strong>ホーム</strong>: <a href="../01_introduction/">はじめに</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

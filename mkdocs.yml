@@ -1,4 +1,53 @@
 site_name: Bob Workshop
 site_url: https://r-nakayamasan.github.io/bob-workshop-draft/
+
+# Navigation
+nav:
+  - はじめに:
+      - 事前準備とセットアップ: 00_preparation_and_setup.md
+      - IBM Bob の紹介: 01_introduction.md
+      - Bob のインターフェース: 02_bob_interface.md
+  - ハンズオン:
+      - Lab 1 - 要件定義書からの実装: 03_lab1.md
+      - Lab 2 - 既存コードの読み込みと機能追加: 04_lab2.md
+      - Lab 3 - コードレビュー: 05_lab3.md
+  - まとめ:
+      - まとめと次のステップ: 06_summary.md
+
+# Theme
 theme:
   name: material
+  language: 'ja'
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/library
+  logo: assets/images/bob_image.png
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - content.code.select
+    #- navigation.instant
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+# Markdown Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+
+# Made with Bob
