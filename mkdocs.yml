@@ -3,6 +3,7 @@ site_url: https://r-nakayamasan.github.io/bob-workshop-draft/
 
 # Navigation
 nav:
+  - ホーム: index.md
   - はじめに:
       - 事前準備とセットアップ: 00_introduction.md
       - IBM Bob の紹介: 01_preparation_and_setup.md
