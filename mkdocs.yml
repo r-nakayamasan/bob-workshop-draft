@@ -51,4 +51,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 
+# Extra CSS
+extra_css:
+  - stylesheets/extra.css
+
 # Made with Bob

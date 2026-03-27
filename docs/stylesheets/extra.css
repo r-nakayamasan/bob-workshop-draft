@@ -1,0 +1,391 @@
+/* ============================================
+   IBM Design Language - Custom Stylesheet
+   ============================================ */
+
+/* ============================================
+   1. CSS Variables (Design Tokens)
+   ============================================ */
+
+:root {
+  /* Primary Colors */
+  --ibm-blue: #0f62fe;
+  --ibm-blue-dark: #0043ce;
+  --ibm-blue-light: #4589ff;
+
+  /* Grayscale */
+  --ibm-gray-10: #f4f4f4;
+  --ibm-gray-20: #e0e0e0;
+  --ibm-gray-30: #c6c6c6;
+  --ibm-gray-50: #8d8d8d;
+  --ibm-gray-70: #525252;
+  --ibm-gray-90: #262626;
+  --ibm-gray-100: #161616;
+
+  /* Semantic Colors */
+  --ibm-white: #ffffff;
+  --ibm-green: #24a148;
+  --ibm-red: #da1e28;
+  --ibm-yellow: #f1c21b;
+
+  /* Spacing System */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+
+  /* Typography */
+  --font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+
+  /* Design Tokens */
+  --border-radius: 0;      /* IBM Design Language: No rounded corners */
+  --transition: all 0.2s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+/* ============================================
+   2. Base Styles
+   ============================================ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--ibm-gray-70);
+}
+
+/* ============================================
+   3. Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  color: var(--ibm-gray-90);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;      /* 40px */
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xl);
+}
+
+h2 {
+  font-size: 2rem;        /* 32px */
+  line-height: 1.25;
+  margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+  font-size: 1.5rem;      /* 24px */
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+}
+
+h4 {
+  font-size: 1.25rem;     /* 20px */
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+}
+
+p {
+  font-size: 1rem;        /* 16px */
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+small {
+  font-size: 0.875rem;    /* 14px */
+}
+
+/* ============================================
+   4. Code Blocks
+   ============================================ */
+
+code {
+  font-family: var(--font-family-mono);
+  background-color: var(--ibm-gray-10);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  background-color: var(--ibm-gray-10);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Inline code with IBM red accent */
+:not(pre) > code {
+  color: var(--ibm-red);
+}
+
+/* ============================================
+   5. Links
+   ============================================ */
+
+a {
+  color: var(--ibm-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--ibm-blue-dark);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--ibm-blue);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   6. Buttons
+   ============================================ */
+
+button,
+.md-button {
+  font-family: var(--font-family);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.md-button--primary {
+  background-color: var(--ibm-blue);
+  color: var(--ibm-white);
+}
+
+.md-button--primary:hover {
+  background-color: var(--ibm-blue-dark);
+}
+
+/* ============================================
+   7. Tables
+   ============================================ */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+
+th {
+  background-color: var(--ibm-gray-10);
+  color: var(--ibm-gray-90);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 2px solid var(--ibm-gray-20);
+}
+
+td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--ibm-gray-20);
+}
+
+tr:hover {
+  background-color: var(--ibm-gray-10);
+}
+
+/* ============================================
+   8. Admonitions
+   ============================================ */
+
+.admonition {
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.admonition.note {
+  border-left: 4px solid var(--ibm-blue);
+  background-color: rgba(15, 98, 254, 0.05);
+}
+
+.admonition.warning {
+  border-left: 4px solid var(--ibm-yellow);
+  background-color: rgba(241, 194, 27, 0.05);
+}
+
+.admonition.danger {
+  border-left: 4px solid var(--ibm-red);
+  background-color: rgba(218, 30, 40, 0.05);
+}
+
+.admonition.success {
+  border-left: 4px solid var(--ibm-green);
+  background-color: rgba(36, 161, 72, 0.05);
+}
+
+/* ============================================
+   9. Navigation
+   ============================================ */
+
+.md-header {
+  background-color: var(--ibm-gray-100);
+}
+
+.md-tabs {
+  background-color: var(--ibm-gray-100);
+}
+
+/* Top navigation tabs - white text */
+.md-tabs__link {
+  color: var(--ibm-white) !important;
+  opacity: 0.7;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--ibm-white) !important;
+  opacity: 1;
+}
+
+/* Sidebar Navigation - smaller than body text (14px) */
+.md-nav {
+  font-size: 0.875rem;  /* 14px - smaller than body text (16px) */
+}
+
+.md-nav__link {
+  color: var(--ibm-gray-90);
+  font-size: 0.875rem;  /* 14px */
+}
+
+.md-nav__link:hover {
+  color: var(--ibm-blue);
+}
+
+.md-nav__link--active {
+  color: var(--ibm-blue);
+  font-weight: 600;
+}
+
+/* Primary navigation items */
+.md-nav--primary .md-nav__item {
+  font-size: 0.875rem;  /* 14px for main sections */
+}
+
+.md-nav--primary .md-nav__link {
+  font-size: 0.875rem;  /* 14px */
+}
+
+/* Secondary navigation items (subsections) */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.875rem;  /* 14px for subsections */
+}
+
+/* ============================================
+   10. Content Area
+   ============================================ */
+
+.md-content {
+  padding: var(--spacing-xl);
+}
+
+/* ============================================
+   11. Images
+   ============================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* ============================================
+   12. Blockquotes
+   ============================================ */
+
+blockquote {
+  border-left: 4px solid var(--ibm-blue);
+  padding-left: var(--spacing-md);
+  margin-left: 0;
+  color: var(--ibm-gray-70);
+  font-style: italic;
+}
+
+/* ============================================
+   13. Horizontal Rules
+   ============================================ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--ibm-gray-20);
+  margin: var(--spacing-xl) 0;
+}
+
+/* ============================================
+   14. Lists
+   ============================================ */
+
+ul, ol {
+  padding-left: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+li {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   15. Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .md-content {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   16. Accessibility Enhancements
+   ============================================ */
+
+/* Focus indicators */
+*:focus {
+  outline: 2px solid var(--ibm-blue);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --ibm-gray-70: #000000;
+    --ibm-gray-90: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Made with Bob */
