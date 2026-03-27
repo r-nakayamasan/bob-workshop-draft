@@ -1255,10 +1255,6 @@
 <h1 id="lab3-">LAB3 - セキュリティ強化</h1>
 <p><img alt="LAB3 Header" src="../assets/images/05_lab3/lab3_header.png" />
 安全なアプリケーション運用のために、生成されたコードにセキュリティ上の問題がないか確認します。</p>
-<ul>
-<li>Bobを使ってコードレビューを実施する</li>
-<li>レビュー結果の中から1箇所を選び、修正を行う</li>
-</ul>
 <h2 id="review">Reviewコマンドの実行</h2>
 <h3 id="1">1. レビューの実行</h3>
 <p>チャット画面に「/review」と入力します。</p>
@@ -1321,39 +1317,39 @@
 1. 並び替えボタンをクリック
 2. 並び替え方法の選択
 3. 優先度別の並び替え結果を確認</p>
-<p><img alt="alt text" src="../assets/images/image-4.png" /></p>
+<p><img alt="alt text" src="../assets/images/05_lab3/review_summary2.png" /></p>
 <h3 id="6">6. レビュー内容の確認</h3>
-<p>説明欄には、レビュー箇所の概要・推奨修正案が記載されています。</p>
-<p><img alt="alt text" src="../assets/images/image-3.png" /></p>
+<p>説明欄には、レビュー箇所の概要・推奨修正案が記載されています。
+<img alt="alt text" src="../assets/images/05_lab3/review_details2.png" /></p>
 <h2 id="_1">エラー箇所の修正</h2>
 <h3 id="1_1">1. 修正作業の開始</h3>
 <p>修正したい箇所を一つ選び、その中の「Direct fix」ボタンをクリックして修正を開始します。</p>
 <p><strong>ユーザーのアクション:</strong>
 1. 修正したい項目を選択
-2. 「Direct fix」ボタンをクリック</p>
-<p><img alt="alt text" src="../assets/images/image-2.png" /></p>
+2. 「Direct fix」ボタンをクリック
+<img alt="alt text" src="../assets/images/05_lab3/browser_test.png" /></p>
 <h3 id="2_1">2. 修正内容の連携</h3>
-<p>修正作業が開始されると、BOB FINDINGS内のレビュー内容がBobに連携され、チャット画面にメッセージが生成されます。</p>
-<p><img alt="alt text" src="../assets/images/image-1.png" /></p>
+<p>修正作業が開始されると、BOB FINDINGS内のレビュー内容がBobに連携され、チャット画面にメッセージが生成されます。
+<img alt="alt text" src="../assets/images/05_lab3/code_fix_approval.png" /></p>
 <h3 id="3_2">3. レビューサマリーの表示</h3>
 <p>修正が完了するとサマリーが表示されます。</p>
 <p><strong>サマリーの内容:</strong>
 - 修正された問題
 - 変更されたファイル
 - 変更内容の概要
-- 次のステップの提案</p>
-<p><img alt="alt text" src="../assets/images/image.png" /></p>
+- 次のステップの提案
+<img alt="alt text" src="../assets/images/05_lab3/test_result.png" /></p>
 <h2 id="_2">修正後のテスト実行</h2>
 <h3 id="1_2">1. テストの実行</h3>
 <p>修正完了後にBobはテストの実行を提案してくれるため、「テストの実行」をクリックします。
-<img alt="alt text" src="../assets/images/image-1.png" /></p>
+<img alt="alt text" src="../assets/images/05_lab3/test_execution.png" /></p>
 <p><strong>テストの目的:</strong>
 - 修正が正しく適用されたか確認
 - 既存機能が壊れていないか確認
 - 新たな問題が発生していないか確認</p>
 <h3 id="2_2">2. テストの実行プロセス</h3>
 <p>テストでは、Bobがブラウザ操作を行い、修正したコードが正しく動作しているかをチェックします。
-<img alt="alt text" src="../assets/images/image-2.png" /></p>
+<img alt="alt text" src="../assets/images/05_lab3/browser_test2.png" /></p>
 <p><strong>テスト項目:</strong>
 - ページの読み込み
 - 各機能の動作確認

@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+         <loc>https://r-nakayamasan.github.io/bob-workshop-draft/00_introduction/</loc>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/00_preparation_and_setup/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/01_introduction/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://r-nakayamasan.github.io/bob-workshop-draft/01_preparation_and_setup/</loc>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/02_bob_interface/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/03_lab1/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/04_lab2/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/05_lab3/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://r-nakayamasan.github.io/bob-workshop-draft/06_summary/</loc>
-         <lastmod>2026-03-24</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
 </urlset>
