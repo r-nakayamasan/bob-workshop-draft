@@ -6,7 +6,7 @@ nav:
   - ホーム: index.md
   - はじめに:
       - 事前準備とセットアップ: 00_introduction.md
-      - IBM Bob の紹介: 01_preparation_and_setup.md
+      - 準備と設定: 01_preparation_and_setup.md
       - Bob のインターフェース: 02_bob_interface.md
   - ハンズオン:
       - Lab 1 - 要件定義書からの実装: 03_lab1.md
