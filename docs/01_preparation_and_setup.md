@@ -11,7 +11,7 @@
 #### 1-1. GitHubリポジトリへアクセス
 
 Webブラウザを開き、リポジトリにアクセスします：
-https://github.com/IBM/japan-technology/tree/main/ibm-bob
+https://github.com/r-nakayamasan/Bob-workshop
 
 #### 1-2. データのダウンロード
 
