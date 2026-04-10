@@ -11,7 +11,7 @@
 #### 1-1. GitHubリポジトリへアクセス
 
 Webブラウザを開き、リポジトリにアクセスします：
-https://github.com/r-nakayamasan/Bob-workshop
+[https://github.com/r-nakayamasan/Bob-workshop](https://github.com/r-nakayamasan/Bob-workshop)
 
 #### 1-2. データのダウンロード
 
@@ -33,6 +33,7 @@ https://github.com/r-nakayamasan/Bob-workshop
 展開後の「Bob-workshop-main」フォルダを、作業しやすい場所（デスクトップなど）にコピーします。
 
 **手順:**
+
 1. 「Bob-workshop-main」フォルダをコピー
 2. デスクトップ（または任意の作業ディレクトリ）に移動
 3. ペースト
@@ -86,10 +87,11 @@ https://github.com/r-nakayamasan/Bob-workshop
 
 準備と設定が完了したら、以下を確認してください：
 
-- [ ] 作業ディレクトリにフォルダをコピー済み
-- [ ] IBM Bobを起動済み
-- [ ] プロジェクトフォルダをBobで開いた
-- [ ] ファイル一覧を確認済み
+- 作業ディレクトリにフォルダをコピー済み
+- IBM Bobを起動済み
+- プロジェクトフォルダをBobで開いた
+- ファイル一覧を確認済み
+
 ## 次のステップ
 
 準備と設定が完了したら、IBM Bobの画面構成と基本操作を学びましょう！
