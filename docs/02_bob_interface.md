@@ -64,7 +64,7 @@ IBM Bob画面上部の**Bobアイコン**をクリックすると、画面右側
 
 - **バジェット**: 使用済みバジェットの確認
 - **言語の選択**: Bobの言語設定（必要に応じて日本語に切り替え）
-- **モデルの選択**: 使用するAIモデルの選択
+
 <img src="../assets/images/02_bob_interface/settings_screen.png" alt="Settings Screen">
 
 ## 自動承認機能
