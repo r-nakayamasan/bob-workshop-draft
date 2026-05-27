@@ -97,7 +97,7 @@ IBM Bob向けのルールやガイドラインを定義した例：
 ### 3.1 公式リソース
 
 #### IBM Bob公式ドキュメント
-- **URL**: https://pages.github.ibm.com/code-assistant/bob-docs/
+- **URL**: https://bob.ibm.com/docs/ide/
 
 
 #### 30日間無料トライアル
