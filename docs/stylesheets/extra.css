@@ -175,6 +175,19 @@ button,
    7. Tables
    ============================================ */
 
+/* テーブルをコンテンツ幅いっぱいに自動拡張・文字サイズを本文と揃える */
+.md-typeset__table {
+  width: 100%;
+  min-width: 100%;
+  display: block;
+}
+
+.md-typeset__table table {
+  width: 100% !important;
+  display: table !important;
+  font-size: 1rem !important;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;

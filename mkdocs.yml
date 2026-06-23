@@ -14,6 +14,8 @@ nav:
       - Lab 3 - コードレビュー: 05_lab3.md
   - まとめ:
       - まとめと次のステップ: 06_summary.md
+  - 応用編:
+      - Bob × Backlog MCP: backlog_lab.md
 
 # Theme
 theme:
