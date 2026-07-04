@@ -49,6 +49,7 @@ IBM Bobを使って、実用的なFAQサイトを一から作成する体験型�
   - 登録ガイドは[こちら](https://qiita.com/Asuka_Saito/items/c0c4b83a485351bd3412)を参照
 - ✅ **Bob IDE** - [ダウンロードはこちら](https://bob.ibm.com/download)
 - ✅ **Webブラウザ** - Chrome、Firefox、Safari、Edge等
+- ✅ **Git** - Lab 3（コードレビュー）の実施に必要です。[公式サイト](https://git-scm.com/downloads)からインストールしてください
 
 ### 推奨環境
 
@@ -75,21 +76,18 @@ IBM Bobの基礎を学び、開発環境を整えます。
 実際にIBM Bobを使って、FAQサイトを開発します。
 
 #### Lab 1: 要件定義書からの実装 ⭐⭐
-**Orchestratorモードを使用**
 
 要件定義書を元に、IBM BobがFAQサイトの基礎部分を自動生成します。HTML、CSS、JavaScriptファイルの作成から、デザインの実装まで、一連の開発プロセスを体験できます。
 
 👉 [Lab 1を始める](https://r-nakayamasan.github.io/bob-workshop-draft/03_lab1/)
 
 #### Lab 2: 既存コードの読み込みと機能追加 ⭐⭐⭐
-**Codeモードを使用**
 
 Lab 1で作成したコードを読み込み、新しい機能を追加します。既存プロジェクトへの機能追加という、実務でよくあるシナリオを体験できます。
 
 👉 [Lab 2を始める](https://r-nakayamasan.github.io/bob-workshop-draft/04_lab2/)
 
 #### Lab 3: コードレビュー ⭐
-**/reviewコマンドを使用**
 
 IBM Bobの強力なコードレビュー機能を使って、セキュリティやパフォーマンスの問題を自動検出します。AIによる品質向上のプロセスを学びます。
 
@@ -129,8 +127,8 @@ Lab 1から順番に進めることで、IBM Bobの機能を段階的に理解�
 ## 📖 このワークショップについて
 
 **作成**: IBM Bob を使用して作成  
-**更新**: 2026年3月  
-**対象バージョン**: IBM Bob v1.0以降  
+**更新**: 2026年7月  
+**対象バージョン**: IBM Bob v2.0以降  
 **ライセンス**: © 2026 IBM Corporation. All rights reserved.
 
 ## 📧 お問い合わせ
