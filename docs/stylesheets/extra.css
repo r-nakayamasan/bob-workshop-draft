@@ -242,6 +242,23 @@ tr:hover {
   background-color: rgba(36, 161, 72, 0.05);
 }
 
+/* Material for MkDocs は admonition 内のフォントを自動で縮小するため、
+   本文と揃うように li / p / ul / ol を 1rem に統一する */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 1rem;
+}
+
+.md-typeset .admonition p,
+.md-typeset .admonition li,
+.md-typeset .admonition ul,
+.md-typeset .admonition ol,
+.md-typeset details p,
+.md-typeset details li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 /* ============================================
    9. Navigation
    ============================================ */

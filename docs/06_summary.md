@@ -97,11 +97,11 @@ IBM Bob向けのルールやガイドラインを定義した例：
 ### 3.1 公式リソース
 
 #### IBM Bob公式ドキュメント
-- **URL**: https://bob.ibm.com/docs/ide/
+- **URL**: <https://bob.ibm.com/docs/ide/>
 
 
 #### 30日間無料トライアル
-- **URL**: https://bob.ibm.com/trial
+- **URL**: <https://bob.ibm.com/trial>
 
 
 
