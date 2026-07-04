@@ -1,4 +1,4 @@
-# IBM Bobの画面構成と基本操作 (v1・旧バージョン)
+# IBM Bobの画面構成と基本操作
 
 ![IBM Bobの画面構成](../assets/images/02_bob_interface/interface_overview.png)
 
@@ -39,17 +39,17 @@ IBM Bob画面上部の**Bobアイコン**をクリックすると、画面右側
 チャット画面左下に、現在使用しているモードが表示されています。
 この部分をクリックすると、利用可能なモードの一覧が表示されます。
 
-<img src="../assets/images/02_bob_interface/mode_selection.png" alt="Mode Selection">
+<img src="../assets/images/02_bob_interface/mode_selection_v2.png" alt="Mode Selection">
 
 ### 2. 各モードの説明
 
-| モード | アイコン | 説明 | 使用場面 |
-|--------|---------|------|---------|
-| **Plan** | 📝 | 実装前に計画と設計を行う | 要件定義、仕様書作成 |
-| **Code** | 💻 | コードを記述、修正、リファクタリング | 実装、バグ修正 |
-| **Advanced** | 🛠️ | 複雑なタスク向けの拡張機能 | 高度な操作 |
-| **Ask** | ❓ | 質問に答え、情報を提供 | 調査、相談 |
-| **Orchestrate** | 🔀 | 複数の専門作業を調整し全体を指揮 | 複雑なプロジェクト |
+v2 では **Agent / Plan / Ask** の 3 モードが用意されています。やりたいことに合わせて切り替えます。
+
+| モード | 役割 | 使う場面 |
+|--------|------|---------|
+| **Agent** 🤖 | コードを書く・直す | 機能実装、バグ修正、リファクタリング |
+| **Plan** 📝 | 進め方を設計する | 実装前に方針や手順を整理したいとき |
+| **Ask** ❓ | 質問に答える | コードや技術について知りたいとき（変更なし） |
 
 
 ## 設定の確認
@@ -57,7 +57,7 @@ IBM Bob画面上部の**Bobアイコン**をクリックすると、画面右側
 
 ### 1. 設定画面を開く
 
-<img src="../assets/images/02_bob_interface/settings_icon.png" alt="Settings Icon">
+<img src="../assets/images/02_bob_interface/settings_icon_v2.png" alt="Settings Icon">
 チャット画面右上の**歯車アイコン**をクリックすると、設定画面が開きます。
 
 ### 2. 主な設定項目
@@ -65,7 +65,9 @@ IBM Bob画面上部の**Bobアイコン**をクリックすると、画面右側
 - **バジェット**: 使用済みバジェットの確認
 - **言語の選択**: Bobの言語設定（必要に応じて日本語に切り替え）
 
-<img src="../assets/images/02_bob_interface/settings_screen.png" alt="Settings Screen">
+<img src="../assets/images/02_bob_interface/settings_budget_v2.png" alt="Settings Screen - Budget">
+
+<img src="../assets/images/02_bob_interface/settings_language_v2.png" alt="Settings Screen - Language">
 
 ## 自動承認機能
 
@@ -96,7 +98,7 @@ Bobが行うアクション（ファイルの書き込み、コマンドの実�
 - **初心者**: オフ（各ステップで確認しながら学習）
 - **慣れてきたら**: オン（効率的に作業）
 
-<img src="../assets/images/02_bob_interface/auto_approval_settings.png" alt="Auto Approval Settings">
+<img src="../assets/images/02_bob_interface/permission_settings_v2.png" alt="Permission Settings">
 
 
 ## チェックリスト

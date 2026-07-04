@@ -7,15 +7,20 @@ nav:
   - はじめに:
       - 事前準備とセットアップ: 00_introduction.md
       - 準備と設定: 01_preparation_and_setup.md
-      - Bob のインターフェース: 02_bob_interface.md
+      - Bob のインターフェース: 02_bob_interface_v2.md
+      - Bob のインターフェース (v1・旧バージョン): 02_bob_interface.md
   - ハンズオン:
-      - Lab 1 - 要件定義書からの実装: 03_lab1.md
-      - Lab 2 - 既存コードの読み込みと機能追加: 04_lab2.md
-      - Lab 3 - コードレビュー: 05_lab3.md
+      - Lab 1 - 要件定義書からの実装: 03_lab1_v2.md
+      - Lab 2 - 既存コードの読み込みと機能追加: 04_lab2_v2.md
+      - Lab 3 - コードレビュー: 05_lab3_v2.md
   - まとめ:
       - まとめと次のステップ: 06_summary.md
   - 応用編:
       - Bob × Backlog MCP: backlog_lab.md
+  - ハンズオン (v1・旧バージョン):
+      - Lab 1 - 要件定義書からの実装 (v1・旧バージョン): 03_lab1.md
+      - Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン): 04_lab2.md
+      - Lab 3 - コードレビュー (v1・旧バージョン): 05_lab3.md
 
 # Theme
 theme:
