@@ -57,14 +57,3 @@ IBM Bobへようこそ！🎉 ここでは、IBM Bobを使って実用的なFAQ�
 ---
 
 **準備ができましたら、[次のセクション：準備と設定](01_preparation_and_setup.md)に進みましょう！**
-
----
-
-## このチュートリアルについて
-
-**作成**: IBM Bob を使用して作成  
-**更新**: 2026年3月  
-**対象バージョン**: IBM Bob v1.0以降  
-**ライセンス**: © 2026 IBM Corporation. All rights reserved.
-
-**Made with IBM Bob** 🚀

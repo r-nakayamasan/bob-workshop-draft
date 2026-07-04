@@ -11,3 +11,7 @@ wheels/
 .bob
 
 .DS_store
+senario-idea
+
+.playwright-mcp
+site/
