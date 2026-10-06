@@ -17,6 +17,8 @@ nav:
       - まとめと次のステップ: 06_summary.md
   - 応用編:
       - Bob × Backlog MCP: backlog_lab.md
+      - Java Premium Package:
+          - 準備編: java_premium_00_preparation.md
   - ハンズオン (v1・旧バージョン):
       - Lab 1 - 要件定義書からの実装 (v1・旧バージョン): 03_lab1.md
       - Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン): 04_lab2.md
@@ -55,6 +57,10 @@ markdown_extensions:
           - name: mermaid
             class: mermaid
             format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - admonition
   - pymdownx.details
 
