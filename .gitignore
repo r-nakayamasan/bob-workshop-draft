@@ -15,3 +15,6 @@ senario-idea
 
 .playwright-mcp
 site/
+
+# Workshop sample code (not part of the docs site)
+java-modernization-main-v2/
