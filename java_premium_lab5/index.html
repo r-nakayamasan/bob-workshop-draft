@@ -1,0 +1,3246 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://r-nakayamasan.github.io/bob-workshop-draft/java_premium_lab5/">
+      
+      
+        <link rel="prev" href="../java_premium_lab4/">
+      
+      
+        <link rel="next" href="../03_lab1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Lab 5 - 脆弱性の検出と修正 - Bob Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-5" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Bob Workshop" class="md-header__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bob Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 5 - 脆弱性の検出と修正
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_introduction/" class="md-tabs__link">
+          
+  
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1_v2/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06_summary/" class="md-tabs__link">
+          
+  
+  
+  まとめ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../backlog_lab/" class="md-tabs__link">
+          
+  
+  
+  応用編
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン (v1・旧バージョン)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bob Workshop" class="md-nav__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    Bob Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    はじめに
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    はじめに
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    事前準備とセットアップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_preparation_and_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備と設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    まとめ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめと次のステップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    応用編
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    応用編
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backlog_lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob × Backlog MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Premium Package
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Premium Package
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_00_preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備編
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ワークショップ概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Liberty への移行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Java 21 へのアップグレード
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - UI のモダナイゼーション
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - ユニットテストの生成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 - 脆弱性の検出と修正
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 - 脆弱性の検出と修正
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-pharmacy-dashboard-cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Pharmacy Dashboard：依存ライブラリの CVE スキャンと修正
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目次
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. はじめに
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        依存ライブラリの脆弱性検出とは
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        このラボについて
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習目標
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 前提条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 前提条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-bob-idev2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Bob IDE（V2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ターミナル環境（macOS zsh）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java 21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob の再起動
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. V2 の注目機能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. セットアップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. セットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. スナップショットを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. スナップショットフォルダを IDE で開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. チャット入力欄の下部を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ワークフローが表示されることを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-1java-vulnerability-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 演習 1：Java Vulnerability Remediation ワークフローを実行する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 演習 1：Java Vulnerability Remediation ワークフローを実行する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：ワークフローを開始する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：依存関係の検出と脆弱性の照会
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：脆弱性の修正を選択する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：ワークフローの流れを把握する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-2cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 演習 2：CVE の検出結果を確認する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 演習 2：CVE の検出結果を確認する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：完了サマリーを開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：HTML レポートを読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：対応の優先順位を考える
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：わからない脆弱性を Bob に質問する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 演習 3：検出された脆弱性を修正する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 演習 3：検出された脆弱性を修正する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：修正アプローチを計画する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：pom.xml の変更内容を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：コマンドの実行を承認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：Todoリストで進捗を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：連鎖的な影響に対処する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 演習 4：修正後のアプリケーションを確認する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 演習 4：修正後のアプリケーションを確認する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：修正を検証するサブタスクを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：ビルドの結果を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：テストと推移的依存関係を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：検証結果を読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：手元でもコンパイルを確認する（任意）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 6：ワークフローを再実行する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7liberty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 7（オプション）：Liberty サーバーを起動する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローが脆弱性ゼロと報告する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvn-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        バージョンアップ後に mvn compile が失敗する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推移的依存関係がクリーンにアップグレードできない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob のターミナルで Java バージョンが異なる
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        お疲れ様でした！
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-pharmacy-dashboard-cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Pharmacy Dashboard：依存ライブラリの CVE スキャンと修正
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目次
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. はじめに
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        依存ライブラリの脆弱性検出とは
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        このラボについて
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習目標
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 前提条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 前提条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-bob-idev2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Bob IDE（V2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ターミナル環境（macOS zsh）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java 21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob の再起動
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. V2 の注目機能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. セットアップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. セットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. スナップショットを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. スナップショットフォルダを IDE で開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. チャット入力欄の下部を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ワークフローが表示されることを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-1java-vulnerability-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 演習 1：Java Vulnerability Remediation ワークフローを実行する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 演習 1：Java Vulnerability Remediation ワークフローを実行する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：ワークフローを開始する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：依存関係の検出と脆弱性の照会
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：脆弱性の修正を選択する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：ワークフローの流れを把握する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-2cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 演習 2：CVE の検出結果を確認する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 演習 2：CVE の検出結果を確認する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：完了サマリーを開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：HTML レポートを読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：対応の優先順位を考える
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：わからない脆弱性を Bob に質問する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 演習 3：検出された脆弱性を修正する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 演習 3：検出された脆弱性を修正する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：修正アプローチを計画する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：pom.xml の変更内容を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：コマンドの実行を承認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：Todoリストで進捗を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：連鎖的な影響に対処する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 演習 4：修正後のアプリケーションを確認する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 演習 4：修正後のアプリケーションを確認する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：修正を検証するサブタスクを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：ビルドの結果を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：テストと推移的依存関係を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：検証結果を読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：手元でもコンパイルを確認する（任意）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 6：ワークフローを再実行する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7liberty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 7（オプション）：Liberty サーバーを起動する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローが脆弱性ゼロと報告する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvn-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        バージョンアップ後に mvn compile が失敗する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推移的依存関係がクリーンにアップグレードできない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob のターミナルで Java バージョンが異なる
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        お疲れ様でした！
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-5">Lab 5 — 脆弱性の検出と修正</h1>
+<h2 id="simple-pharmacy-dashboard-cve">Simple Pharmacy Dashboard：依存ライブラリの CVE スキャンと修正</h2>
+<hr />
+<h2 id="_1">目次</h2>
+<ol>
+<li><a href="#1-はじめに">はじめに</a></li>
+<li><a href="#2-前提条件">前提条件</a></li>
+<li><a href="#3-v2-の注目機能">V2 の注目機能</a></li>
+<li><a href="#4-セットアップ">セットアップ</a></li>
+<li><a href="#5-演習-1java-vulnerability-remediation-ワークフローを実行する">演習 1：Java Vulnerability Remediation ワークフローを実行する</a></li>
+<li><a href="#6-演習-2cve-の検出結果を確認する">演習 2：CVE の検出結果を確認する</a></li>
+<li><a href="#7-演習-3検出された脆弱性を修正する">演習 3：検出された脆弱性を修正する</a></li>
+<li><a href="#8-演習-4修正後のアプリケーションを確認する">演習 4：修正後のアプリケーションを確認する</a></li>
+<li><a href="#9-トラブルシューティング">トラブルシューティング</a></li>
+<li><a href="#10-まとめ">まとめ</a></li>
+</ol>
+<hr />
+<h2 id="1">1. はじめに</h2>
+<h3 id="_2">依存ライブラリの脆弱性検出とは</h3>
+<p>すべての Java アプリケーションは、直接的（<code>pom.xml</code> に宣言）または間接的（他のライブラリ経由で取り込まれる推移的依存関係）にサードパーティライブラリに依存しています。これらのライブラリはいずれも、CVE として公開された既知のセキュリティ脆弱性を持つ可能性があります。</p>
+<p>依存ライブラリの脆弱性検出は以下のプロセスです。</p>
+<ul>
+<li><strong>スキャン</strong>: 直接・推移的なすべての依存関係を確認</li>
+<li><strong>照合</strong>: 公開された CVE データベースと照合</li>
+<li><strong>報告</strong>: 各一致について深刻度・影響バージョン・修正推奨事項を報告</li>
+<li><strong>修正</strong>: 脆弱性のある依存関係をアップグレードまたは除外</li>
+</ul>
+<h3 id="_3">このラボについて</h3>
+<p><strong>Bob V2 の Java Vulnerability Remediation ワークフロー</strong>を使って、薬局アプリケーションの依存関係をスキャンし、検出結果を読み取り、脆弱性のあるライブラリをアップグレードして修正します。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>修正前</strong></td>
+<td><code>pom.xml</code> に脆弱性のある依存関係バージョンが含まれる薬局アプリ</td>
+</tr>
+<tr>
+<td><strong>修正後</strong></td>
+<td>脆弱性のある依存関係をアップグレード済み、修正後のビルドとテストが成功し、修正内容をまとめた HTML レポートが作成された同アプリ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">学習目標</h3>
+<p>このラボを完了すると、次のことができるようになります。</p>
+<ul>
+<li>Java Vulnerability Remediation ワークフローを起動し、進捗と検出結果を読める</li>
+<li>直接依存関係と推移的依存関係の脆弱性の違いを理解できる</li>
+<li>修正するかどうかの選択と、Bob が実行するコマンドの承認を行える</li>
+<li>修正後もアプリがビルドでき、テストが成功していることを確認できる</li>
+</ul>
+<hr />
+<h2 id="2">2. 前提条件</h2>
+<h3 id="ibm-bob-idev2">IBM Bob IDE（V2）</h3>
+<ul>
+<li>最新の Bob V2 IDE 拡張機能をインストール済みであること</li>
+<li>Java Vulnerability Remediation ワークフローが含まれる Premium パッケージのサブスクリプションが必要</li>
+</ul>
+<h3 id="macos-zsh">ターミナル環境（macOS zsh）</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># SDKMAN が未設定の場合:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://get.sdkman.io&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;[[ -s &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot; ]] &amp;&amp; source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
+</span></code></pre></div>
+<h3 id="java-21">Java 21</h3>
+<p><strong>動作確認済み（Apple Silicon）</strong>: <code>21.0.11-zulu</code></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sdk<span class="w"> </span>install<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.0.11-zulu
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.0.11-zulu
+</span></code></pre></div>
+<h3 id="maven">Maven</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sdk<span class="w"> </span>install<span class="w"> </span>maven
+</span></code></pre></div>
+<h3 id="bob">Bob の再起動</h3>
+<p>Maven インストール後に Bob を完全に終了して再起動してください。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>このラボはバックエンドのみです。Node.js と npm は不要です。</p>
+</div>
+<hr />
+<h2 id="3-v2">3. V2 の注目機能</h2>
+<p>このラボで注目すべき Bob V2 の機能です。</p>
+<table>
+<thead>
+<tr>
+<th>機能</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>トップレベルのスタンドアロンワークフロー</strong></td>
+<td>Java Vulnerability Remediation は、ワークフロー一覧で Java Modernization や Java Unit Testing と並ぶ専用のワークフロー</td>
+</tr>
+<tr>
+<td><strong>高速な脆弱性照会</strong></td>
+<td>依存関係の脆弱性照会は数秒で完了（スクリーンショットの例では 54 個の依存関係を数秒で照会）。修正と検証を含むワークフロー全体では数分かかる（例：約 5 分）</td>
+</tr>
+<tr>
+<td><strong>依存関係の範囲とスコープ</strong></td>
+<td>検出結果のレポートに影響を受けるパッケージとスコープ（例：<code>test</code>）が表示される。推移的依存関係は修正後の検証で確認する</td>
+</tr>
+<tr>
+<td><strong>承認つきの修正フロー</strong></td>
+<td>修正を進めるかどうかを 1 回選び、その後 Bob が修正と検証を進める。コマンドの実行は、承認待ちのツールとして確認を求められる</td>
+</tr>
+<tr>
+<td><strong>タスクごとのコスト</strong></td>
+<td>サブタスクごとにツール数・トークン数・コストを表示し、チャット上部にワークフロー全体のコストを表示</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. セットアップ</h2>
+<h3 id="0">0. スナップショットを取得する</h3>
+<p>Bob に以下をお願いしてください。</p>
+<blockquote>
+<p>以下の URL から Lab 5 用のスナップショットをダウンロードして展開してください。</p>
+<p><code>https://raw.githubusercontent.com/r-nakayamasan/bob-workshop-draft/main/snapshots/snapE-security-vulnerabilities.zip</code></p>
+<p>ダウンロードして <code>~/lab-workspace/</code> に展開してください。</p>
+</blockquote>
+<p>Bob が自動で以下のコマンドを実行します（Mac/Windows どちらでも動作します）：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># ダウンロード</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>snapE.zip<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/r-nakayamasan/bob-workshop-draft/main/snapshots/snapE-security-vulnerabilities.zip&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 展開</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>-e<span class="w"> </span>snapE.zip<span class="w"> </span>./lab-workspace/
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">作業フォルダの場所</p>
+<p>展開先は任意の場所で構いません。<code>~/lab-workspace/</code> の部分はお好みのパスに変更してください。</p>
+</div>
+<h3 id="1-ide">1. スナップショットフォルダを IDE で開く</h3>
+<p>展開した <strong><code>snapE-security-vulnerabilities/</code></strong> フォルダをプロジェクトルートとして開いてください。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p><code>snapE-security-vulnerabilities</code> フォルダをそのままルートとして開いてください。ワークフローはスナップショットレベルでのみ表示されます。</p>
+</div>
+<h3 id="2_1">2. チャット入力欄の下部を確認する</h3>
+<p>Bob のチャット入力欄の下部に、選択欄（スクリーンショットでは <strong>Java Modernization</strong>）と <strong>権限</strong> が表示されていることを確認します。</p>
+<h3 id="3">3. ワークフローが表示されることを確認する</h3>
+<p>Bob のチャットパネル上部の再生ボタン（▶）をクリックすると <strong>Bobワークフロー</strong> の一覧が開きます。「すべてのワークフロー」に <strong>Java Vulnerability Remediation</strong> が表示されていることを確認します。</p>
+<hr />
+<h2 id="5-1java-vulnerability-remediation">5. 演習 1：Java Vulnerability Remediation ワークフローを実行する</h2>
+<h3 id="_5">目的</h3>
+<p>ワークフローを起動して、Bob に依存関係の脆弱性の照会を実行させ、修正を進めるかどうかを選びます。</p>
+<h3 id="_6">手順</h3>
+<p>ワークフローの実行中は、チャット上部に現在のサブタスク名と進捗（<code>2/9</code> のような表示）が出ます。Bob が自動で進める部分と、<strong>人が判断する部分</strong>（修正を進めるかの選択、コマンドの承認）が交互に現れるので、画面下部の「承認待ちのツール」や選択肢を見逃さないようにしてください。</p>
+<div class="admonition note">
+<p class="admonition-title">画面の見た目について</p>
+<p>このページのスクリーンショットは日本語 UI の Bob V2 で撮影したものです。収録では <strong>snapB-java-upgrade</strong> というプロジェクトを使っているため、プロジェクト名、依存関係の件数、検出される脆弱性、コストは、このラボの <code>snapE-security-vulnerabilities</code> で表示される内容とは異なります。画面の数値は例として読んでください。</p>
+</div>
+<h4 id="1_1">ステップ 1：ワークフローを開始する</h4>
+<p>チャットパネル上部の再生ボタン（▶）で <strong>Bobワークフロー</strong> の一覧を開き、<strong>Java Vulnerability Remediation</strong> カードの <strong>開始</strong> をクリックします。カード右端の ∨ を押すと、ワークフローの説明（OSV データベース（osv.dev）を使って、Java アプリケーション内のオープンソース JAR に既知の脆弱性がないかをスキャンし、修正バージョンを取得する、という内容）が展開されます。</p>
+<p><img alt="Bob ワークフロー一覧で Java Vulnerability Remediation を開始する" src="../assets/images/java_premium_lab5/01_workflow_start.png" /></p>
+<p><strong>裏側の処理</strong></p>
+<p>Bob は開始すると、チャットに対象プロジェクトのパスを表示し、「脆弱性を検出する」のサブタスクを始めます。</p>
+<div class="admonition tip">
+<p class="admonition-title">確認ポイント</p>
+<p>チャットに表示されるプロジェクトのパスが、手順 1 で開いた <code>snapE-security-vulnerabilities</code> のフォルダになっていることを確認してください。</p>
+</div>
+<h4 id="2_2">ステップ 2：依存関係の検出と脆弱性の照会</h4>
+<p>Bob はプロジェクトの依存関係を検出し、固有の依存関係ごとに脆弱性を照会します。スクリーンショットの例では <strong>54 個</strong> の固有の依存関係を照会していました。照会中は「脆弱性を照会中...」と表示されます。</p>
+<p><img alt="固有の依存関係の脆弱性を照会している画面" src="../assets/images/java_premium_lab5/02_cve_lookup.png" /></p>
+<p><strong>裏側の処理</strong></p>
+<ol>
+<li><strong>依存関係の検出</strong>: 「依存関係を検出しました」として結果が折りたたまれて表示されます（展開すると内容を確認できます）</li>
+<li><strong>脆弱性の照会</strong>: OSV データベース（osv.dev）を使って脆弱性を照会します</li>
+<li><strong>照会の完了</strong>: 「脆弱性の照会が完了しました」と表示され、見つかった件数が出ます</li>
+</ol>
+<p>スクリーンショットの例では、照会は数秒で終わりました。ワークフロー全体の時間は、このあとの修正と検証の分だけ長くなります。</p>
+<h4 id="3_1">ステップ 3：脆弱性の修正を選択する</h4>
+<p>照会が完了すると、Bob は「見つかった脆弱性：N」と件数を表示し、<strong>脆弱性の修正</strong> の選択肢を出します。「検出された脆弱性の修正を進めますか？」に対して、次のいずれかを選びます。</p>
+<p><img alt="脆弱性の修正の選択肢（はい、すべて解決する / はい、一部を選択する / いいえ）" src="../assets/images/java_premium_lab5/03_fix_approval_prompt.png" /></p>
+<table>
+<thead>
+<tr>
+<th>ボタン</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>はい、すべて解決する</strong></td>
+<td>検出された脆弱性をすべて修正対象にして、修正のサブタスクに進みます</td>
+</tr>
+<tr>
+<td><strong>はい、一部を選択する</strong></td>
+<td>この収録では選択していません</td>
+</tr>
+<tr>
+<td><strong>いいえ</strong></td>
+<td>この収録では選択していません</td>
+</tr>
+</tbody>
+</table>
+<p>このラボでは <strong>はい、すべて解決する</strong> を選びます。</p>
+<h4 id="4_1">ステップ 4：ワークフローの流れを把握する</h4>
+<p><strong>はい、すべて解決する</strong> を選ぶと、Bob は残りの工程を続けて進めます。チャット上部のサブタスク名で、今どの工程かを確認できます。スクリーンショットの例では、次の順で進みました。</p>
+<ol>
+<li><strong>脆弱性を検出する</strong>（このステップ 2）</li>
+<li><strong>修正を確認する</strong>（ステップ 3）</li>
+<li><strong>修正アプローチを計画する</strong>（演習 3 のステップ 1）</li>
+<li><strong>脆弱性を修正する</strong>（演習 3）</li>
+<li><strong>修正を検証する</strong>（演習 4）</li>
+<li>完了サマリーの作成（英語表記：<em>Generating workflow summary</em>。演習 2）</li>
+</ol>
+<hr />
+<h2 id="6-2cve">6. 演習 2：CVE の検出結果を確認する</h2>
+<h3 id="_7">目的</h3>
+<p>Bob が見つけた脆弱性の内容（深刻度、スコープ、修正バージョン）を読み取り、対応の優先順位を考えます。</p>
+<div class="admonition note">
+<p class="admonition-title">読むタイミング</p>
+<p>チャットには演習 1 の時点で「見つかった脆弱性：N」と件数だけが表示されます。詳しい検出結果のレポートは、修正と検証が終わったあとに作成されます。この演習は、演習 3 と演習 4 の内容を終えてから行ってください。</p>
+</div>
+<h3 id="_8">手順</h3>
+<h4 id="1_2">ステップ 1：完了サマリーを開く</h4>
+<p>ワークフローが完了すると（スクリーンショットの例では <strong>9/9</strong>）、チャットに <strong>Vulnerability Remediation Summary</strong> のカードが表示されます。カードには「1 vulnerabilities detected — 3 tasks completed.」と表示されます。カード右下のボタンを押すと、検出結果をまとめた HTML レポートが開きます。</p>
+<p><img alt="完了サマリーと Vulnerability Remediation Summary のカード" src="../assets/images/java_premium_lab5/11_completion_summary.png" /></p>
+<p>チャット上部には、ワークフロー全体のコストが表示されます（スクリーンショットの例では <strong>1.14</strong>）。サブタスクの一覧では、工程ごとのコストと時間を確認できます。例として、<strong>修正アプローチを計画する</strong> は 0.097、23 秒でした。また、画面下部には「1 個のファイルが変更されました」と変更数が表示され、<strong>すべて表示</strong> で変更ファイルの一覧を開けます。</p>
+<h4 id="2html">ステップ 2：HTML レポートを読む</h4>
+<p>HTML レポートには、脆弱性ごとに次の情報が表形式で表示されます。スクリーンショットの例（1 件）は次のとおりです。</p>
+<p><img alt="HTML レポートの脆弱性一覧" src="../assets/images/java_premium_lab5/12_vulnerability_report.png" /></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>例（スクリーンショットの値）</th>
+<th>見るポイント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID</strong></td>
+<td><code>GHSA-rqfh-9r24-8c9r</code></td>
+<td>脆弱性の識別子。この例は CVE ではなく GHSA 形式の ID です</td>
+</tr>
+<tr>
+<td><strong>SEVERITY</strong></td>
+<td>HIGH 8.2</td>
+<td>深刻度と数値</td>
+</tr>
+<tr>
+<td><strong>SUMMARY</strong></td>
+<td>AssertJ XML External Entity (XXE) Injection</td>
+<td>脆弱性の概要</td>
+</tr>
+<tr>
+<td><strong>AFFECTED PACKAGE</strong></td>
+<td><code>org.assertj:assertj-core</code>（Scope: test）</td>
+<td>影響を受けるライブラリと、依存関係のスコープ</td>
+</tr>
+<tr>
+<td><strong>FIXED VERSION</strong></td>
+<td>3.27.7（was 3.27.3）</td>
+<td>修正済みバージョンと、元のバージョン</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">レポートの注意書き</p>
+<p>レポートには、脆弱な API がプロジェクトで使われているかどうかの説明も含まれます。この例では、脆弱な <code>isXmlEqualTo()</code> を使うコードは見つからず、修正は影響の少ないパッチバージョンの更新だけで済む、と記載されていました。</p>
+</div>
+<h4 id="3_2">ステップ 3：対応の優先順位を考える</h4>
+<p>次の観点で、どの脆弱性から対応するかを決めます。</p>
+<div class="admonition tip">
+<p class="admonition-title">確認ポイント</p>
+<ul>
+<li><strong>スコープ</strong>: <code>test</code> は、テストのためだけに使われる依存関係です。本番のコードに入るかどうかは、スコープと利用箇所で判断します。</li>
+<li><strong>深刻度と修正バージョン</strong>: 深刻度の高いものや、バージョンを上げるだけで直せるものから確認すると効率的です。</li>
+<li><strong>利用箇所</strong>: レポートの注意書きで、脆弱な API が使われているかを確認します。</li>
+<li><strong>直接か推移的か</strong>: 演習 4 の推移的依存関係の確認で見ます。</li>
+</ul>
+</div>
+<h4 id="4-bob">ステップ 4：わからない脆弱性を Bob に質問する</h4>
+<p>馴染みのない脆弱性については、Bob に直接質問しましょう。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CVE-XXXX-XXXX について平易な言葉で説明してください。このアプリケーションにどのような影響があるか教えてください。
+</span></code></pre></div>
+<p>Bob がその脆弱性の概要と実際への影響を説明します。</p>
+<hr />
+<h2 id="7-3">7. 演習 3：検出された脆弱性を修正する</h2>
+<h3 id="_9">目的</h3>
+<p>Bob が提案した修正を、承認を挟みながら適用する流れを理解します。</p>
+<h3 id="_10">手順</h3>
+<h4 id="1_3">ステップ 1：修正アプローチを計画する</h4>
+<p><strong>はい、すべて解決する</strong> を選ぶと、Bob はサブタスク <strong>修正アプローチを計画する</strong>（画面上の英語表記は <em>Planning fixing approach</em>）を開始します。サブタスクのカードの ∨ を押すと、実行中のツールの内容（「Java 環境を読み込みました」「依存関係を検出中...」など）を確認できます。</p>
+<p><img alt="修正アプローチを計画するサブタスク" src="../assets/images/java_premium_lab5/04_planning_subtask.png" /></p>
+<p><strong>裏側の処理</strong></p>
+<ul>
+<li>Java 環境の読み込み（「Java 環境を読み込みました」）</li>
+<li>依存関係の検出と、修正対象のファイル（<code>pom.xml</code>）の探索（「パターン"**/pom.xml"のファイルが見つかりました」）</li>
+</ul>
+<h4 id="2pomxml">ステップ 2：pom.xml の変更内容を確認する</h4>
+<p>修正方針が決まると、Bob は <strong>脆弱性を修正する</strong> サブタスクで変更内容を説明し、<code>pom.xml</code> を編集します。スクリーンショットの例では、次の説明が表示されました。</p>
+<blockquote>
+<p>I'll fix the AssertJ XXE vulnerability by upgrading <code>org.assertj:assertj-core</code> from <code>3.27.3</code> to <code>3.27.7</code>.</p>
+</blockquote>
+<p>そのあと Bob は <code>pom.xml</code> を読み取り、差分を適用しました。この収録では、<code>pom.xml</code> の変更について承認を求める表示はありませんでした。</p>
+<div class="admonition tip">
+<p class="admonition-title">確認ポイント</p>
+<p>この収録では、<code>pom.xml</code> の変更に承認は求められず、そのまま適用されました。適用後の変更内容は、画面下部の <strong>すべて表示</strong> で確認できます（<strong>すべて元に戻す</strong> で元に戻すこともできます）。</p>
+</div>
+<h4 id="3_3">ステップ 3：コマンドの実行を承認する</h4>
+<p>Bob は修正を確認するために Maven のコマンドを実行します。実行前に、画面下部に <strong>承認待ちのツール</strong> が表示されます。スクリーンショットの例では、<code>org.assertj:assertj-core</code> の解決を確認するコマンドでした。</p>
+<p><img alt="コマンドの実行を承認する画面" src="../assets/images/java_premium_lab5/05_command_approval.png" /></p>
+<table>
+<thead>
+<tr>
+<th>ボタン</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>一度だけ承認</strong></td>
+<td>このコマンドだけ実行を許可します</td>
+</tr>
+<tr>
+<td><strong>拒否</strong></td>
+<td>このコマンドを実行させません</td>
+</tr>
+<tr>
+<td><strong>タスクに対して承認</strong></td>
+<td>このサブタスクの間は、同種のコマンドを確認なしで許可します</td>
+</tr>
+</tbody>
+</table>
+<p>承認待ちのツールには、コマンドの内容（例：<code>mvn dependency:resolve -pl . -Dinclude=org.assertj:assertj-core 2&gt;&amp;1 | tail -20</code>）と <code>timeout_seconds</code> が表示されます。「コマンドをグローバル許可/拒否リストに追加」は、この収録では使用していません。</p>
+<p>コマンドが <code>pom.xml</code> を書き換えず、依存関係を解決するだけであることを確かめてから、<strong>一度だけ承認</strong> をクリックします。</p>
+<h4 id="4todo">ステップ 4：Todoリストで進捗を確認する</h4>
+<p>承認したコマンドが実行されると、Bob は <code>org.assertj:assertj-core:jar:3.27.7</code> を解決できたと報告し、次のテストに進みました。画面上部の <strong>Todoリスト</strong> には、修正の作業項目が英語で表示されます。</p>
+<p><img alt="Todo リストと実行結果" src="../assets/images/java_premium_lab5/06_todo_list.png" /></p>
+<ul>
+<li>Update assertj-core version from 3.27.3 to 3.27.7 in pom.xml</li>
+<li>Verify Maven can resolve the new artifact</li>
+<li>Run test suite to confirm no regressions</li>
+</ul>
+<p>完了した項目は緑の点、実行中の項目は黄色の点で表示されます（スクリーンショットでは 2/3 が完了）。</p>
+<h4 id="5">ステップ 5：連鎖的な影響に対処する</h4>
+<p>修正によって二次的な問題が発生することがあります（例：新しいメジャーバージョンへのアップグレードが他の箇所の API 変更を必要とする）。その場合、Bob がこれらを特定して追加修正の承認を求めます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>この収録では、修正を求める追加の表示は出ませんでした。</p>
+</div>
+<hr />
+<h2 id="8-4">8. 演習 4：修正後のアプリケーションを確認する</h2>
+<h3 id="_11">目的</h3>
+<p>修正後もビルドとテストが成功し、推移的依存関係に新たな問題がないことを確認します。</p>
+<h3 id="_12">手順</h3>
+<h4 id="1_4">ステップ 1：修正を検証するサブタスクを確認する</h4>
+<p><strong>脆弱性を修正する</strong> が完了すると、Bob は <strong>修正を検証する</strong> サブタスクを開始します。スクリーンショットの例では、次の 4 つの作業で構成されていました。</p>
+<ol>
+<li>Verify the assertj-core version in pom.xml has been updat...（pom.xml のバージョン更新を確認）</li>
+<li>Verify the project builds successfully（プロジェクトがビルドできることを確認）</li>
+<li>Run the test suite to confirm no regressions（テストを実行して回帰がないことを確認）</li>
+<li>Check for transitive dependency conflicts（推移的依存関係の競合を確認）</li>
+</ol>
+<p>（英語表記は Bob の出力そのままで、画面上で一部省略されています。日本語の説明は理解のための補足です。）</p>
+<p><img alt="修正を検証するサブタスク" src="../assets/images/java_premium_lab5/07_verify_subtask.png" /></p>
+<h4 id="2_3">ステップ 2：ビルドの結果を確認する</h4>
+<p>Bob はプロジェクトをビルドし、結果を報告します。スクリーンショットの例では「ビルド完了」として、「ビルドはエラー・警告ゼロで成功。テストを実行します。」と表示されました。</p>
+<p><img alt="ビルドの完了とテストの開始" src="../assets/images/java_premium_lab5/08_build_and_test.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">確認ポイント</p>
+<p>ビルド結果の行で、エラーや警告の有無を確認しましょう。</p>
+</div>
+<h4 id="3_4">ステップ 3：テストと推移的依存関係を確認する</h4>
+<p>テストは「全 165 テストがパス」と報告されました（スクリーンショットの例）。その後、Bob は推移的依存関係の確認に入り、<code>mvn dependency:tree</code> を実行するための承認を求めました。承認の操作は演習 3 のステップ 3 と同じです（<strong>一度だけ承認</strong>）。</p>
+<p><img alt="推移的依存関係の確認コマンドの承認" src="../assets/images/java_premium_lab5/09_transitive_check_approval.png" /></p>
+<h4 id="4_2">ステップ 4：検証結果を読む</h4>
+<p>Bob は依存関係の確認結果を次のように報告しました（スクリーンショットの例）。</p>
+<ul>
+<li><code>assertj-core:3.27.7</code> は直接宣言されているだけで、ほかのライブラリから推移的に取り込まれていない</li>
+<li><code>assertj-core</code> に関連する警告はない</li>
+<li>表示された別の警告（<code>microprofile-openapi-api</code>、<code>junit-jupiter-api</code>）は、変更前から存在していた既存の状態</li>
+</ul>
+<p><img alt="依存関係の確認結果" src="../assets/images/java_premium_lab5/10_transitive_check_result.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">確認ポイント</p>
+<p>修正と無関係の既存の警告が残ることがあります。修正対象のライブラリに関する警告が出ていないかを確認してください。</p>
+</div>
+<h4 id="5_1">ステップ 5：手元でもコンパイルを確認する（任意）</h4>
+<p>Bob のターミナルで:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>compile
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># BUILD SUCCESS が表示されることを確認</span>
+</span></code></pre></div>
+<h4 id="6">ステップ 6：ワークフローを再実行する</h4>
+<p><strong>Java Vulnerability Remediation</strong> ワークフローの <strong>開始</strong> を再度クリックします。Bob が検出結果ゼロまたは大幅に減少したリストを報告するはずです。</p>
+<h4 id="7liberty">ステップ 7（オプション）：Liberty サーバーを起動する</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mvn<span class="w"> </span>liberty:run
+</span></code></pre></div>
+<p>アップグレードによるランタイムエラーなしに API が起動することを確認します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>http://localhost:9081/simple-pharmacy/api/dashboard
+</span></code></pre></div>
+<hr />
+<h2 id="9">9. トラブルシューティング</h2>
+<h3 id="_13">ワークフローが脆弱性ゼロと報告する</h3>
+<p><strong>症状</strong>: Bob のスキャンが「検出されたパッケージに影響する脆弱性は見つかりませんでした」で完了する</p>
+<p><strong>対処法</strong>: これは正当な結果（クリーンな依存関係）の可能性もありますが、このラボでは <code>pom.xml</code> にラボが想定する意図的に脆弱なバージョンが含まれていないことを意味します。<code>snapE-*</code> の開始スナップショットを開いていること、かつ変更していないことを確認してください。</p>
+<hr />
+<h3 id="mvn-compile">バージョンアップ後に <code>mvn compile</code> が失敗する</h3>
+<p><strong>症状</strong>: CVE の修正でライブラリが破壊的な API 変更を含むバージョンにアップグレードされ、コードがコンパイルできなくなる</p>
+<p><strong>対処法</strong>: コンパイルエラーを Bob に貼り付けて API の変更に対応するよう依頼します。Bob がコードを修正するか、（まだセキュアな）別のバージョンを提案します。</p>
+<hr />
+<h3 id="_14">推移的依存関係がクリーンにアップグレードできない</h3>
+<p><strong>症状</strong>: CVE が推移的依存関係内にあり、別のライブラリが古いバージョンを必要としているためシンプルなバージョンアップができない</p>
+<p><strong>対処法</strong>: Bob は通常、外部依存関係への <code>&lt;exclusions&gt;</code> ブロックと修正済みバージョンの直接宣言を提案します。プロンプトが表示されたら承認してください。</p>
+<hr />
+<h3 id="bob-java">Bob のターミナルで Java バージョンが異なる</h3>
+<p><strong>症状</strong>: Bob のターミナルで <code>java -version</code> が 21 以外のバージョンを表示する</p>
+<p><strong>対処法</strong>: Bob のターミナルで以下を実行します。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.0.11-zulu
+</span></code></pre></div>
+<p><code>sdk use</code> はシェルスコープのため、ターミナルタブには適用されません。</p>
+<hr />
+<h2 id="10">10. まとめ</h2>
+<p>Bob V2 の専用ワークフローを使って、依存関係の脆弱性の検出から修正・検証までを完了しました。</p>
+<ul>
+<li>✅ Java Vulnerability Remediation ワークフローの起動</li>
+<li>✅ 検出結果（HTML レポート）の確認と、深刻度・スコープ・修正バージョンの把握</li>
+<li>✅ 修正の選択と、コマンドの承認</li>
+<li>✅ 修正後のビルドとテストの成功、推移的依存関係の確認</li>
+<li>✅ 連鎖的な影響（破壊的なアップグレード、推移的な除外）への対処</li>
+</ul>
+<p>これで Java Modernization ラボ 5 つをすべて完了しました！</p>
+<hr />
+<h2 id="_15">お疲れ様でした！</h2>
+<p>このワークショップでは IBM Bob を使って以下の Java モダナイゼーション作業を体験しました。</p>
+<table>
+<thead>
+<tr>
+<th>ラボ</th>
+<th>達成内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lab 1</strong></td>
+<td>Traditional WebSphere から Liberty ランタイムへの移行</td>
+</tr>
+<tr>
+<td><strong>Lab 2</strong></td>
+<td>Java 8 から Java 21（Jakarta EE 10）へのアップグレード</td>
+</tr>
+<tr>
+<td><strong>Lab 3</strong></td>
+<td>Struts/JSP UI から React + Material UI への移行</td>
+</tr>
+<tr>
+<td><strong>Lab 4</strong></td>
+<td>JUnit 5 + JaCoCo による 80% 以上のテストカバレッジの実現</td>
+</tr>
+<tr>
+<td><strong>Lab 5</strong></td>
+<td>依存ライブラリの CVE スキャンと脆弱性の修正</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

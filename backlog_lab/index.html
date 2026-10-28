@@ -1,0 +1,2572 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://r-nakayamasan.github.io/bob-workshop-draft/backlog_lab/">
+      
+      
+        <link rel="prev" href="../06_summary/">
+      
+      
+        <link rel="next" href="../java_premium_00_preparation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Bob × Backlog MCP - Bob Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bob-backlog-mcp" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Bob Workshop" class="md-header__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bob Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bob × Backlog MCP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_introduction/" class="md-tabs__link">
+          
+  
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1_v2/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06_summary/" class="md-tabs__link">
+          
+  
+  
+  まとめ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  応用編
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン (v1・旧バージョン)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bob Workshop" class="md-nav__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    Bob Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    はじめに
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    はじめに
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    事前準備とセットアップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_preparation_and_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備と設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    まとめ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめと次のステップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    応用編
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    応用編
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob × Backlog MCP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob × Backlog MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全体像
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 所要時間
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事前準備
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="事前準備">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Backlog アカウントを用意する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Backlog プロジェクトを作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ハンズオン用課題を作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Wiki を作成する（任意）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlog-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog MCP セットアップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backlog MCP セットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        必要なもの
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backlog-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog API キーを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob の MCP 設定画面を開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-backlog-mcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob に Backlog MCP を設定する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接続確認
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1backlog-bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 1：Backlog 課題を Bob で読み取る
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 2：課題を要件に変換する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3wiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 3：Wiki も参照して精度を上げる
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-4backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 4：Backlog にコメントを追加する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab 4：Backlog にコメントを追加する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメント案を作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメントを投稿する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        課題の状態を更新する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネクストステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ネクストステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自分のプロジェクトで試す
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentsmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENTS.md でルールを定義する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        他の MCP と組み合わせる
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        関連リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Premium Package
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Premium Package
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_00_preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備編
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ワークショップ概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Liberty への移行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Java 21 へのアップグレード
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - UI のモダナイゼーション
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - ユニットテストの生成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 - 脆弱性の検出と修正
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全体像
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 所要時間
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事前準備
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="事前準備">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Backlog アカウントを用意する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Backlog プロジェクトを作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ハンズオン用課題を作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Wiki を作成する（任意）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlog-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog MCP セットアップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backlog MCP セットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        必要なもの
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backlog-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog API キーを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob の MCP 設定画面を開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bob-backlog-mcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob に Backlog MCP を設定する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接続確認
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1backlog-bob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 1：Backlog 課題を Bob で読み取る
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 2：課題を要件に変換する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3wiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 3：Wiki も参照して精度を上げる
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-4backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab 4：Backlog にコメントを追加する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab 4：Backlog にコメントを追加する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメント案を作成する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コメントを投稿する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        課題の状態を更新する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネクストステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ネクストステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自分のプロジェクトで試す
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentsmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENTS.md でルールを定義する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        他の MCP と組み合わせる
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        関連リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bob-backlog-mcp">Bob × Backlog MCP ハンズオン</h1>
+<p>Backlogに登録された課題を、Bob から Backlog MCP 経由で取得し、内容の整理・対応方針の作成・コメント追加までを体験するハンズオンです。</p>
+<div class="admonition warning">
+<p class="admonition-title">はじめにお読みください</p>
+<ul>
+<li><strong>生成 AI の出力にはブレがあります。</strong> 同じプロンプトを実行しても、毎回まったく同じ出力になるとは限りません。ハンズオン内の「期待する出力例」はあくまで参考です。</li>
+<li><strong>本番プロジェクトは使わないでください。</strong> Backlog MCP は課題の読み取りだけでなく、コメント投稿や状態変更など<strong>書き込み操作</strong>も行います。必ず検証用スペース・プロジェクトで実施してください。</li>
+<li><strong>Backlog に書き込む前に内容を確認してください。</strong> プロンプトに「まだ更新しないでください」と明記することで、Bob が下書きを表示してから確認のうえ実行できます。</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Backlog MCP の今後</p>
+<p>現在 Backlog MCP は個別に設定が必要ですが、今後は <strong>Bob の MCP マーケットプレイス</strong>からワンクリックで導入できる形式での提供も計画されています。</p>
+</div>
+<hr />
+<h2 id="_1">全体像</h2>
+<p>登場するのは 3 つだけです。</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Backlog\n課題・コメント・Wiki]
+    B[Backlog MCP\n接続口]
+    C[Bob\nAI エージェント]
+
+    C -- ツール呼び出し --&gt; B
+    B -- REST API --&gt; A
+    A -- レスポンス --&gt; B
+    B -- 結果を返す --&gt; C</code></pre>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backlog</strong></td>
+<td>課題、コメント、Wiki を管理する場所</td>
+</tr>
+<tr>
+<td><strong>Backlog MCP</strong></td>
+<td>Bob が Backlog を読み書きするための接続口</td>
+</tr>
+<tr>
+<td><strong>Bob</strong></td>
+<td>課題の読み取り・整理・対応方針作成・コメント生成を行う AI エージェント</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">⏱️ 所要時間</h2>
+<table>
+<thead>
+<tr>
+<th>セクション</th>
+<th>時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概要説明</td>
+<td>5 分</td>
+</tr>
+<tr>
+<td>セットアップ確認</td>
+<td>10 分</td>
+</tr>
+<tr>
+<td>Lab 1：Backlog 課題を Bob で取得</td>
+<td>5 分</td>
+</tr>
+<tr>
+<td>Lab 2：課題内容を整理</td>
+<td>10 分</td>
+</tr>
+<tr>
+<td>Lab 3：対応方針と確認観点を作成</td>
+<td>10 分</td>
+</tr>
+<tr>
+<td>Lab 4：Backlog へコメント追加</td>
+<td>5 分</td>
+</tr>
+</tbody>
+</table>
+<p><strong>合計</strong>: 標準 45 分 / 短縮 25〜30 分</p>
+<hr />
+<h2 id="_3">事前準備</h2>
+<h3 id="1-backlog">1. Backlog アカウントを用意する</h3>
+<p>Backlog のアカウントがある場合はそのままお使いください。アカウントがない場合は、<a href="https://backlog.com/ja/">Backlog 公式サイト</a> からスペースを作成してください。</p>
+<div class="admonition tip">
+<p class="admonition-title">お試しで使いたい場合</p>
+<p>個人利用レベルであれば、無料で使える <a href="https://backlog.com/ja/pricing/">フリープラン</a> も提供されています。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">本番スペースは使わない</p>
+<p>既存のスペースを使う場合でも、必ず<strong>検証用プロジェクト</strong>を新しく作成してください。</p>
+</div>
+<p>スペースを用意したら、スペースの URL（例：<code>your-domain.backlog.com</code>）を控えておきます。</p>
+<h3 id="2-backlog">2. Backlog プロジェクトを作成する</h3>
+<p>Backlog にログイン後、以下の手順でハンズオン用プロジェクトを作成します。</p>
+<ol>
+<li>画面上部の「新規プロジェクト」をクリック</li>
+<li>
+<p>以下の内容で作成する</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>プロジェクト名</td>
+<td><code>Bob Backlog Workshop</code></td>
+</tr>
+<tr>
+<td>プロジェクトキー</td>
+<td><code>BOBWS</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>「作成」をクリック</p>
+</li>
+</ol>
+<h3 id="3">3. ハンズオン用課題を作成する</h3>
+<p>作成したプロジェクトに課題を追加します。</p>
+<ol>
+<li>プロジェクトページの「課題を追加」をクリック</li>
+<li>
+<p>以下の内容を入力して保存する</p>
+<p><strong>件名</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>FAQ画面で目的の質問を探しにくい
+</span></code></pre></div>
+<p><strong>詳細</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>お客様から、FAQ画面で目的の質問を探しにくいという問い合わせがありました。
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>現状：
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- FAQが一覧で表示されている
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- 件数が増えてきたため、目的の質問を探すのに時間がかかる
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- 特に「料金」「契約」「ログイン」などのキーワードで探したいという要望がある
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>期待すること：
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>- 利用者が目的のFAQを見つけやすくしたい
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>- どのような改善案が考えられるか整理したい
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>- 開発チームが対応しやすいように、要件と確認観点を整理したい
+</span></code></pre></div>
+</li>
+<li>
+<p>保存後、課題キー（例：<code>BOBWS-1</code>）が割り当てられることを確認する</p>
+</li>
+</ol>
+<h3 id="4-wiki">4. Wiki を作成する（任意）</h3>
+<p>Bob が追加情報を参照できるように、Backlog Wiki に仕様メモを作成します。</p>
+<ol>
+<li>プロジェクトページの「Wiki」タブをクリック</li>
+<li>「ページを追加」をクリック</li>
+<li>
+<p>以下の内容を入力して保存する</p>
+<p><strong>Wiki 名</strong>: <code>FAQ画面の仕様メモ</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FAQ画面は、利用者からよくある質問を一覧表示する画面です。
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>現在の仕様：
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- FAQは一覧形式で表示する
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- FAQには質問文と回答文がある
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- カテゴリは未実装
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>- 検索機能は未実装
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>利用者からよくある問い合わせ：
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>- 料金に関するFAQを探したい
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>- 契約に関するFAQを探したい
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>- ログインできない場合のFAQを探したい
+</span></code></pre></div>
+</li>
+</ol>
+<hr />
+<h2 id="backlog-mcp">Backlog MCP セットアップ</h2>
+<h3 id="_4">必要なもの</h3>
+<table>
+<thead>
+<tr>
+<th>ツール</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>インストール済みであること</td>
+</tr>
+<tr>
+<td>Backlog アカウント</td>
+<td>検証用スペース推奨</td>
+</tr>
+<tr>
+<td>Backlog API キー</td>
+<td>個人設定から取得</td>
+</tr>
+<tr>
+<td>Docker または Node.js / npx</td>
+<td>初回は npx が手軽</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backlog-api">Backlog API キーを取得する</h3>
+<p>Backlog の個人設定から API キーを取得します。</p>
+<div class="admonition warning">
+<p class="admonition-title">本番プロジェクトのAPIキーは使わない</p>
+<p>ハンズオンでは必ず検証用スペースまたは検証用プロジェクトを使います。</p>
+</div>
+<h3 id="bob-mcp">Bob の MCP 設定画面を開く</h3>
+<ol>
+<li>Bob のチャットパネル右上にある <strong>歯車アイコン（⚙）</strong> をクリックします</li>
+<li>設定パネルが開いたら、左側のタブから <strong>「MCP」</strong> を選択します</li>
+<li>画面内の <strong>「＋」ボタン</strong> をクリックして MCP サーバーを追加します</li>
+</ol>
+<h3 id="bob-backlog-mcp_1">Bob に Backlog MCP を設定する</h3>
+<p>MCP 設定画面が開いたら、以下の JSON を入力して追加します。</p>
+<p><strong>npx を使う場合（推奨）</strong></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;backlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;backlog-mcp-server&quot;</span><span class="p">],</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;BACKLOG_DOMAIN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-domain.backlog.com&quot;</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">&quot;BACKLOG_API_KEY&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;ENABLE_TOOLSETS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;space,project,issue,wiki,document&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">&quot;OPTIMIZE_RESPONSE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">&quot;MAX_TOKENS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000&quot;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Docker を使う場合</strong></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;backlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="s2">&quot;run&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--pull&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;always&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--rm&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BACKLOG_DOMAIN&quot;</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BACKLOG_API_KEY&quot;</span><span class="p">,</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ENABLE_TOOLSETS&quot;</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;OPTIMIZE_RESPONSE&quot;</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MAX_TOKENS&quot;</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="s2">&quot;ghcr.io/nulab/backlog-mcp-server&quot;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="p">],</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">&quot;BACKLOG_DOMAIN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-domain.backlog.com&quot;</span><span class="p">,</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">&quot;BACKLOG_API_KEY&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="nt">&quot;ENABLE_TOOLSETS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;space,project,issue,wiki,document&quot;</span><span class="p">,</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nt">&quot;OPTIMIZE_RESPONSE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="nt">&quot;MAX_TOKENS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000&quot;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">設定のポイント</p>
+<ul>
+<li><code>issue</code> を入れると課題とコメントを扱える</li>
+<li><code>wiki</code> を入れると Wiki を参照できる</li>
+<li><code>OPTIMIZE_RESPONSE</code> と <code>MAX_TOKENS</code> は大きなレスポンスを安定して扱うために設定</li>
+</ul>
+</div>
+<h3 id="_5">接続確認</h3>
+<p>設定後、Bob に以下を入力して接続できているか確認します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Backlog MCPに接続できているか確認してください。
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>私がアクセスできるBacklogプロジェクトの一覧を表示してください。
+</span></code></pre></div>
+<p><strong>期待する出力例:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>BOBWS: Bob Backlog Workshop
+</span></code></pre></div>
+<p>次に対象プロジェクトの課題一覧を確認します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>BOBWSプロジェクトの未完了課題を一覧してください。
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>件名、課題キー、状態、担当者を表形式で整理してください。
+</span></code></pre></div>
+<p><strong>期待する出力例:</strong></p>
+<table>
+<thead>
+<tr>
+<th>課題キー</th>
+<th>件名</th>
+<th>状態</th>
+<th>担当者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOBWS-1</td>
+<td>FAQ画面で目的の質問を探しにくい</td>
+<td>未対応</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="lab-1backlog-bob">Lab 1：Backlog 課題を Bob で読み取る</h2>
+<p>Bob に以下を入力します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Backlogの課題 BOBWS-1 を取得してください。
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>課題の件名、詳細、現在の状態、コメントを要約してください。
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>まだBacklogには更新しないでください。
+</span></code></pre></div>
+<p><strong>Bob が行うこと:</strong></p>
+<ul>
+<li>Backlog MCP で課題を取得</li>
+<li>課題内容を要約</li>
+<li>現状・要望・未確定事項を分けて整理</li>
+</ul>
+<p><strong>期待する出力例:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>## 課題概要
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>FAQ画面で目的の質問を探しにくいという問い合わせ。
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>## 現状
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>- FAQが一覧表示されている
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>- FAQ件数が増え、探しにくくなっている
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- 検索やカテゴリ分けは未実装
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>## 利用者要望
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>- 料金、契約、ログインなどのキーワードでFAQを探したい
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>- 目的のFAQに早く到達したい
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>## 未確定事項
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>- 検索対象を質問文だけにするか、回答文も含めるか
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>- カテゴリ機能まで必要か
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>- 0件時の表示をどうするか
+</span></code></pre></div>
+<hr />
+<h2 id="lab-2">Lab 2：課題を要件に変換する</h2>
+<p>Bob に以下を入力します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>このBacklog課題を、開発チームが対応しやすい要件に整理してください。
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>以下の形式で出してください。
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- 背景
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- 解決したい課題
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>- 機能要件
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>- 非機能・考慮事項
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>- 完了条件
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>- 確認すべき質問
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Backlogにはまだコメントしないでください。
+</span></code></pre></div>
+<p><strong>期待する出力例:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>## 背景
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>FAQ件数が増え、利用者が目的のFAQを探しにくくなっている。
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>## 解決したい課題
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>FAQをキーワードで絞り込み、目的の質問に早く到達できるようにする。
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>## 機能要件
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>- FAQ画面に検索ボックスを表示する
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>- 入力されたキーワードに一致するFAQを表示する
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>- 質問文と回答文を検索対象にする
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>- 検索キーワードが空の場合は全件表示する
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>- 該当するFAQがない場合はメッセージを表示する
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>## 非機能・考慮事項
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>- 既存のFAQ表示を壊さない
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>- 利用者に分かりやすい文言にする
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>- 大量のFAQでも操作が重くならないようにする
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>## 完了条件
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>- 検索ボックスが表示される
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>- キーワードでFAQが絞り込まれる
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>- 空欄に戻すと全件表示される
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>- 0件時に「該当するFAQがありません」と表示される
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>## 確認すべき質問
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>- 検索対象は質問文と回答文の両方でよいか
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>- カテゴリ検索は今回の対象に含めるか
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>- 表示順は既存順でよいか
+</span></code></pre></div>
+<hr />
+<h2 id="lab-3wiki">Lab 3：Wiki も参照して精度を上げる</h2>
+<div class="admonition note">
+<p class="admonition-title">Wiki を用意した場合に実施するLabです</p>
+</div>
+<p>Bob に以下を入力します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>BOBWSプロジェクトのWikiから、FAQ画面に関係しそうな情報を探してください。
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>その内容も踏まえて、BOBWS-1の対応方針を更新してください。
+</span></code></pre></div>
+<p><strong>期待する出力例:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Wiki「FAQ画面の仕様メモ」を確認しました。
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>追加で分かったこと：
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>- FAQには質問文と回答文がある
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>- カテゴリは未実装
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>- 検索機能も未実装
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>- 利用者は料金、契約、ログインなどの情報を探している
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>対応方針：
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>今回はカテゴリ機能までは含めず、まずキーワード検索を追加するのが適切です。
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>検索対象は質問文と回答文の両方にするのがよいです。
+</span></code></pre></div>
+<p><strong>このLabで体験できる価値:</strong></p>
+<ul>
+<li>Bob が Backlog 課題だけでなく <strong>Wiki も参照できる</strong></li>
+<li>課題単体では不足する背景情報を補える</li>
+<li>社内の既存ドキュメントを踏まえた整理を AI に任せられる</li>
+</ul>
+<hr />
+<h2 id="lab-4backlog">Lab 4：Backlog にコメントを追加する</h2>
+<h3 id="_6">コメント案を作成する</h3>
+<p>まず Bob にコメント案を作らせます。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>BOBWS-1に追加するBacklogコメント案を作ってください。
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>コメントには以下を含めてください。
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>- 課題の理解
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>- 対応方針
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>- 完了条件
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>- 確認したい事項
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>文章はBacklogにそのまま貼れる自然な日本語にしてください。
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>まだ投稿はしないでください。
+</span></code></pre></div>
+<p><strong>期待するコメント案:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>課題内容を確認しました。
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>本件は、FAQ件数の増加により利用者が目的の質問を探しにくくなっていることが
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>課題と理解しました。
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>対応方針としては、まずFAQ画面にキーワード検索機能を追加するのが適切と考えます。
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>検索対象は質問文と回答文の両方とし、キーワード未入力時は全件表示、
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>該当するFAQがない場合は「該当するFAQがありません」と表示する想定です。
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>完了条件は以下です。
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>- FAQ画面に検索ボックスが表示される
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>- 入力キーワードに応じてFAQが絞り込まれる
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>- 空欄に戻すと全件表示される
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>- 該当結果がない場合にメッセージが表示される
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>- 既存のFAQ表示に影響がない
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>確認したい事項は以下です。
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>- 検索対象は質問文と回答文の両方でよいか
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>- カテゴリ検索は今回の対象外でよいか
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>- 表示順は既存順のままでよいか
+</span></code></pre></div>
+<h3 id="_7">コメントを投稿する</h3>
+<p>内容を確認したら、Bob に投稿を指示します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>上記のコメントを、Backlog課題 BOBWS-1 に追加してください。
+</span></code></pre></div>
+<p>Bob が Backlog MCP 経由でコメントを追加します。その後、Backlog 画面を開いてコメントが追加されたことを確認してください。</p>
+<div class="admonition success">
+<p class="admonition-title">注目ポイント</p>
+<p>Bob の操作がそのまま Backlog に反映されるのを確認できます。</p>
+</div>
+<h3 id="_8">課題の状態を更新する</h3>
+<p>最後に、課題の状態も Bob から更新します。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Backlog課題 BOBWS-1 の状態を「処理中」に更新してください。
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>コメントには「要件整理と確認事項の洗い出しが完了しました」と追加してください。
+</span></code></pre></div>
+<p>Backlog 画面で以下を確認します。</p>
+<ul>
+<li>✅ 状態が「処理中」になっている</li>
+<li>✅ コメントが追加されている</li>
+</ul>
+<hr />
+<h2 id="_9">まとめ</h2>
+<p>このハンズオンで体験したことを振り返ります。</p>
+<table>
+<thead>
+<tr>
+<th>学んだこと</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backlog MCP の接続</strong></td>
+<td>Bob と Backlog を MCP 経由でつなぎ、課題・Wiki を直接参照できることを確認した</td>
+</tr>
+<tr>
+<td><strong>課題の読み取りと整理</strong></td>
+<td>Backlog の課題を Bob が取得し、現状・要望・未確定事項に分けて整理できた</td>
+</tr>
+<tr>
+<td><strong>要件への変換</strong></td>
+<td>曖昧な問い合わせ課題を、開発チームが対応しやすい要件・完了条件・確認事項に変換できた</td>
+</tr>
+<tr>
+<td><strong>Wiki の活用</strong></td>
+<td>課題だけでなく Wiki も参照することで、背景情報を補いながら精度の高い対応方針を作れた</td>
+</tr>
+<tr>
+<td><strong>Backlog へのフィードバック</strong></td>
+<td>Bob が作成したコメントを Backlog に直接投稿し、課題の状態も更新できた</td>
+</tr>
+</tbody>
+</table>
+<p>Bob は「コードを書く」だけでなく、<strong>課題の読み取り・整理・コメント作成といった開発前の作業も支援できます。</strong>
+Backlog MCP を活用することで、Backlog に蓄積された情報をそのまま Bob の文脈として使えるようになります。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意事項</p>
+<ul>
+<li>本番プロジェクトではなく<strong>検証用プロジェクト</strong>を使う</li>
+<li>API キーは検証用ユーザーで発行する</li>
+<li>Backlog を更新する前に必ず「まだ更新しないでください」と明示して下書きを確認する</li>
+<li>コメント投稿・状態変更の前に内容を確認する</li>
+</ul>
+</div>
+<hr />
+<h2 id="_10">ネクストステップ</h2>
+<p>このハンズオンを終えたら、次のステップに挑戦してみましょう。</p>
+<h3 id="_11">自分のプロジェクトで試す</h3>
+<p>今回は用意されたサンプル課題を使いましたが、実際の業務プロジェクトの課題を対象にしてみましょう。</p>
+<ul>
+<li>自分が担当している未対応課題を Bob に読み取らせる</li>
+<li>曖昧な課題の要件を Bob に整理させ、そのままコメントとして追加する</li>
+<li>複数の課題をまとめて棚卸しし、対応優先度を整理する</li>
+</ul>
+<h3 id="agentsmd">AGENTS.md でルールを定義する</h3>
+<p>プロジェクトルートに <code>AGENTS.md</code> を置くと、Bob の振る舞いをカスタマイズできます。たとえば「コメントは必ず敬語で書く」「課題キーは必ず末尾に記載する」などのルールを事前に定義しておくことで、毎回プロンプトで指示しなくてよくなります。</p>
+<h3 id="mcp">他の MCP と組み合わせる</h3>
+<p>Backlog MCP 以外にも、さまざまなツールを Bob に接続できます。</p>
+<table>
+<thead>
+<tr>
+<th>MCP</th>
+<th>できること</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub MCP</td>
+<td>PR・Issue の読み取り、コメント追加</td>
+</tr>
+<tr>
+<td>Slack MCP</td>
+<td>チャンネルへの通知・メッセージ送信</td>
+</tr>
+<tr>
+<td>Jira MCP</td>
+<td>Jira 課題の読み取りと更新</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">関連リンク</h2>
+<table>
+<thead>
+<tr>
+<th>リソース</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob MCP 設定ガイド</td>
+<td><a href="https://bob.ibm.com/docs/ide/configuration/mcp/mcp-in-bob">https://bob.ibm.com/docs/ide/configuration/mcp/mcp-in-bob</a></td>
+</tr>
+<tr>
+<td>Backlog 公式サイト</td>
+<td><a href="https://backlog.com/ja/">https://backlog.com/ja/</a></td>
+</tr>
+<tr>
+<td>Backlog MCP Server（GitHub）</td>
+<td><a href="https://github.com/nulab/backlog-mcp-server">https://github.com/nulab/backlog-mcp-server</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>ホーム</strong>: <a href="../">IBM Bob ワークショップへようこそ</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

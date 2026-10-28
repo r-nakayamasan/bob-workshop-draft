@@ -1,0 +1,2742 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://r-nakayamasan.github.io/bob-workshop-draft/java_premium_lab3/">
+      
+      
+        <link rel="prev" href="../java_premium_lab2/">
+      
+      
+        <link rel="next" href="../java_premium_lab4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Lab 3 - UI のモダナイゼーション - Bob Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-3-ui" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="Bob Workshop" class="md-header__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bob Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 3 - UI のモダナイゼーション
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_introduction/" class="md-tabs__link">
+          
+  
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1_v2/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06_summary/" class="md-tabs__link">
+          
+  
+  
+  まとめ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../backlog_lab/" class="md-tabs__link">
+          
+  
+  
+  応用編
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03_lab1/" class="md-tabs__link">
+          
+  
+  
+  ハンズオン (v1・旧バージョン)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bob Workshop" class="md-nav__button md-logo" aria-label="Bob Workshop" data-md-component="logo">
+      
+  <img src="../assets/images/bob_image.png" alt="logo">
+
+    </a>
+    Bob Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    はじめに
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    はじめに
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    事前準備とセットアップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_preparation_and_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備と設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_bob_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob のインターフェース (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    まとめ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    まとめと次のステップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    応用編
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    応用編
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backlog_lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob × Backlog MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Premium Package
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java Premium Package
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_00_preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    準備編
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ワークショップ概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Liberty への移行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Java 21 へのアップグレード
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - UI のモダナイゼーション
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - UI のモダナイゼーション
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-pharmacy-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Pharmacy：レガシー UI のモダナイゼーション
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目次
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. はじめに
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java Modernization ワークフローとは
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローの進行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        このラボについて
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習目標
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 前提条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 前提条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-bob-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Bob IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java と Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js と npm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        追加ツール
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-java-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Java Modernization ワークフローの開始
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Java Modernization ワークフローの開始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. スナップショットを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークスペースを開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent モードに切り替える
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローを開始する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ワークフローのステップバイステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ワークフローのステップバイステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：プロジェクトを分析する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ui-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：UI Modernization を選択する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：アーキテクチャを分析する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：UI モダナイゼーションプロジェクトを設定する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-jakarta-ee-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：バックエンドを Jakarta EE の REST API に移行する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 6：フロントエンドをセットアップする
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 7：コンポーネントとホームページを作る
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ステップ 7：コンポーネントとホームページを作る">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        404 エラーが出た場合（動画の例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 8：ページとバックエンドの連携を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 9：両方のアプリケーションを検証する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 10：アーキテクチャ図とサマリーを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bob-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob のターミナルで Java バージョンが期待と異なる
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liberty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liberty の起動が完了しない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ブラウザーで 404 エラーが出る、一覧が空になる
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ポートが使用中になっている
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        バックエンドのビルドエラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        フロントエンドの npm エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. まとめ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. まとめ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要なポイント
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ（オプション）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - ユニットテストの生成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_premium_lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 - 脆弱性の検出と修正
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ハンズオン (v1・旧バージョン)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - 要件定義書からの実装 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - コードレビュー (v1・旧バージョン)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-pharmacy-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Pharmacy：レガシー UI のモダナイゼーション
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目次
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. はじめに
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java Modernization ワークフローとは
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローの進行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        このラボについて
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学習目標
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 前提条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 前提条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-bob-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Bob IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java と Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js と npm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        追加ツール
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-java-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Java Modernization ワークフローの開始
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Java Modernization ワークフローの開始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. スナップショットを取得する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークスペースを開く
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent モードに切り替える
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークフローを開始する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ワークフローのステップバイステップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ワークフローのステップバイステップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 1：プロジェクトを分析する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ui-modernization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 2：UI Modernization を選択する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 3：アーキテクチャを分析する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 4：UI モダナイゼーションプロジェクトを設定する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-jakarta-ee-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 5：バックエンドを Jakarta EE の REST API に移行する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 6：フロントエンドをセットアップする
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 7：コンポーネントとホームページを作る
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ステップ 7：コンポーネントとホームページを作る">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        404 エラーが出た場合（動画の例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 8：ページとバックエンドの連携を確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 9：両方のアプリケーションを検証する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップ 10：アーキテクチャ図とサマリーを確認する
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bob-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bob のターミナルで Java バージョンが期待と異なる
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liberty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liberty の起動が完了しない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ブラウザーで 404 エラーが出る、一覧が空になる
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ポートが使用中になっている
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        バックエンドのビルドエラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        フロントエンドの npm エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. まとめ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. まとめ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要なポイント
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ（オプション）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-3-ui">Lab 3 — UI のモダナイゼーション</h1>
+<h2 id="simple-pharmacy-ui">Simple Pharmacy：レガシー UI のモダナイゼーション</h2>
+<hr />
+<h2 id="_1">目次</h2>
+<ol>
+<li><a href="#1-はじめに">はじめに</a></li>
+<li><a href="#2-前提条件">前提条件</a></li>
+<li><a href="#3-java-modernization-ワークフローの開始">Java Modernization ワークフローの開始</a></li>
+<li><a href="#4-ワークフローのステップバイステップ">ワークフローのステップバイステップ</a></li>
+<li><a href="#5-トラブルシューティング">トラブルシューティング</a></li>
+<li><a href="#6-まとめ">まとめ</a></li>
+</ol>
+<hr />
+<h2 id="1">1. はじめに</h2>
+<h3 id="java-modernization">Java Modernization ワークフローとは</h3>
+<p>Java Modernization ワークフローは、IBM Bob の中で Java アプリケーションを段階的にモダナイズするための、AI アシスト型のガイドプロセスです。ワークフローには次の 3 つの種類があります。</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Java Upgrade</strong></td>
+<td>プロジェクトの Java バージョンを最新バージョンへアップグレードする</td>
+</tr>
+<tr>
+<td><strong>Liberty Modernization</strong></td>
+<td>Java アプリケーションを WebSphere Liberty を使うように最新化する（AMA ZIP ファイルが必要）</td>
+</tr>
+<tr>
+<td><strong>UI Modernization</strong></td>
+<td>JSP、JSF、Struts で作られた UI を、Java バックエンドとモダンなフロントエンド（React）の 2 つのアプリケーションに変換する</td>
+</tr>
+</tbody>
+</table>
+<p>このラボでは <strong>UI Modernization</strong> を使い、<code>snapC-ui-mod</code>（Struts/JSP でサーバーサイドレンダリングされた Simple Pharmacy）を変換します。</p>
+<h3 id="_2">ワークフローの進行</h3>
+<p>Bob は次の順番で作業を進めます。</p>
+<ol>
+<li><strong>アーキテクチャ分析</strong>: 既存コードを調べ、<code>architecture.md</code>、<code>architecture-diagram.mmd</code>、<code>ui-modernization-options.json</code> の 3 つのドキュメントを作成</li>
+<li><strong>プロジェクト設定</strong>: フロントエンド（React + Material UI）とバックエンド（Jakarta EE style Rest Services）を選択</li>
+<li><strong>バックエンド移行</strong>: Struts を外し、Liberty で動く REST API にする</li>
+<li><strong>フロントエンド構築</strong>: React の画面を作り、ブラウザーで確認しながら修正する</li>
+<li><strong>検証</strong>: 両方のアプリケーションを起動して動作を確認し、アーキテクチャ図とサマリーを作成する</li>
+</ol>
+<h3 id="_3">このラボについて</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>開始状態</strong></td>
+<td>Struts/JSP によるサーバーサイドレンダリング</td>
+</tr>
+<tr>
+<td><strong>目標状態</strong></td>
+<td>React + Material UI のフロントエンドと、Jakarta EE style REST バックエンド</td>
+</tr>
+<tr>
+<td><strong>対象アプリケーション</strong></td>
+<td><code>snapC-ui-mod</code>（Simple Pharmacy）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">学習目標</h3>
+<p>このラボを完了すると、次のことができるようになります。</p>
+<ul>
+<li>Java Modernization ワークフローを開始し、UI Modernization を選択できる</li>
+<li>Bob が作成したアーキテクチャのドキュメントを確認できる</li>
+<li>設定フォームでフロントエンドとバックエンドのスタックを指定できる</li>
+<li>起動したアプリケーションを Swagger UI とブラウザーで確認し、結果を Bob に伝えてデバッグできる</li>
+</ul>
+<hr />
+<h2 id="2">2. 前提条件</h2>
+<h3 id="ibm-bob-ide">IBM Bob IDE</h3>
+<ul>
+<li>最新バージョンの IBM Bob をインストール済みで、ログインしていること</li>
+<li><strong>Agent モード</strong>へのアクセスがあること（ワークフロー開始に必要）</li>
+</ul>
+<h3 id="java-maven">Java と Maven</h3>
+<p>Liberty バックエンドのビルドと起動に必要です。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java<span class="w"> </span>-version<span class="w">   </span><span class="c1"># Java 17 以上</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mvn<span class="w"> </span>-version<span class="w">    </span><span class="c1"># Maven 3.x</span>
+</span></code></pre></div>
+<h3 id="nodejs-npm">Node.js と npm</h3>
+<p>フロントエンドの <code>npm run dev</code> に必要です。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>node<span class="w"> </span>-v<span class="w">   </span><span class="c1"># Node.js</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>-v<span class="w">    </span><span class="c1"># npm</span>
+</span></code></pre></div>
+<h3 id="_5">追加ツール</h3>
+<p>ワークフローが推奨するターゲット状態によって、追加のツールやランタイムが必要になる場合があります。Bob が選択したオプションに必要なツールを示した場合は、インストールしてください。</p>
+<hr />
+<h2 id="3-java-modernization">3. Java Modernization ワークフローの開始</h2>
+<h3 id="0">0. スナップショットを取得する</h3>
+<p>Bob に以下をお願いしてください。</p>
+<blockquote>
+<p>以下の URL から Lab 3 用のスナップショットをダウンロードして展開してください。</p>
+<p><code>https://raw.githubusercontent.com/r-nakayamasan/bob-workshop-draft/main/snapshots/snapC-ui-mod.zip</code></p>
+<p>ダウンロードして <code>~/lab-workspace/</code> に展開してください。</p>
+</blockquote>
+<p>Bob が自動で以下のコマンドを実行します（Mac/Windows どちらでも動作します）。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># ダウンロード</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>snapC.zip<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/r-nakayamasan/bob-workshop-draft/main/snapshots/snapC-ui-mod.zip&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 展開</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>-e<span class="w"> </span>snapC.zip<span class="w"> </span>./lab-workspace/
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">作業フォルダの場所</p>
+<p>展開先は任意の場所で構いません。<code>~/lab-workspace/</code> の部分はお好みのパスに変更してください。</p>
+</div>
+<h3 id="_6">ワークスペースを開く</h3>
+<ol>
+<li>展開した <strong><code>snapC-ui-mod/</code></strong> フォルダを Bob のアクティブなワークスペースとして開く</li>
+<li>Bob チャットインターフェースを開く</li>
+</ol>
+<h3 id="agent">Agent モードに切り替える</h3>
+<p>Java Modernization ワークフローは Bob の <strong>Agent モード</strong>で実行されます。Agent モードでは以下が可能です。</p>
+<ul>
+<li>複数ファイルの読み書き操作</li>
+<li>複雑なマルチステップのワークフロー実行</li>
+<li>レガシー Java UI パターンとモダン UI モダナイゼーションに関する深い知識の活用</li>
+</ul>
+<p><strong>Agent モードへの切り替え</strong>:</p>
+<ol>
+<li>Bob チャットウィンドウ下部のモードインジケーターをクリック</li>
+<li>ドロップダウンから <strong>Agent</strong> を選択</li>
+</ol>
+<h3 id="_7">ワークフローを開始する</h3>
+<ol>
+<li>設定ギアの近くにある再生ボタン <code>(▶︎)</code> をクリックして、ワークフローの一覧を開く</li>
+<li><strong>Java Modernization</strong> のカードを展開すると、3 つの種類（Java Upgrade、Liberty Modernization、UI Modernization）の説明が表示される</li>
+<li><strong>開始</strong> をクリックする</li>
+</ol>
+<p><img alt="Java Modernization ワークフローの一覧" src="../assets/images/java_premium_lab3/01_workflow_list.png" /></p>
+<p>または、Bob チャットウィンドウで以下のように入力してもワークフローを開始できます。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>この Java アプリケーションの UI をモダナイズしたいです。Java Modernization ワークフローの UI Modernization を実行してください。
+</span></code></pre></div>
+<p>Bob が Java Modernization ワークフローを開始し、プロジェクトの分析から進みます。</p>
+<hr />
+<h2 id="4">4. ワークフローのステップバイステップ</h2>
+<h3 id="1_1">ステップ 1：プロジェクトを分析する</h3>
+<p>Bob が <strong>プロジェクトを選択</strong> の欄に、開いているプロジェクトのパスを自動で入力します。<strong>カスタムプロジェクトパス</strong>と<strong>カスタムビルドコマンド</strong>のトグルはオフのままにして、<strong>続行</strong> をクリックします。</p>
+<p><img alt="プロジェクトを分析する" src="../assets/images/java_premium_lab3/02_analyze_project.png" /></p>
+<p>続行すると、Bob は次の順番で準備を進めます。</p>
+<ul>
+<li>Java 環境を読み込む</li>
+<li>依存関係を検出する</li>
+<li>脆弱性の照会を行う</li>
+<li>初回ビルドを実行して、プロジェクトに問題がないか確認する（画面には「プロジェクトをビルド中…」と表示されます）</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>収録時は <code>snapB-java-upgrade</code> フォルダーを使っているため、画面のパスも <code>snapB-java-upgrade</code> になっています。このラボでは展開した <code>snapC-ui-mod</code> を選択してください。</p>
+</div>
+<hr />
+<h3 id="2ui-modernization">ステップ 2：UI Modernization を選択する</h3>
+<p><strong>フロー選択</strong> の画面で、モダナイゼーションの種類を選びます。</p>
+<ul>
+<li><strong>UI Modernization</strong> を選択する</li>
+<li><strong>Liberty Modernization</strong> はグレー表示になり、選択できません。画面には「アプリケーションはすでに Liberty を使用しています」と表示されます。</li>
+<li><strong>Git Flow を有効にする</strong> はオンのままにします。オンにすると、Bob が <strong>作成するブランチ名</strong>（例: <code>java-modernization-20261027145101</code>）のブランチを作成し、主要なステップごとに変更を自動でコミットします。</li>
+</ul>
+<p><img alt="モダナイゼーションの種類の選択" src="../assets/images/java_premium_lab3/03_ui_modernization_type.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>動画の収録では Git Flow がオンの状態で進めています。ブランチを作りたくない場合は、トグルをオフにしてから <strong>続行</strong> をクリックしてください。</p>
+</div>
+<p><strong>続行</strong> をクリックします。</p>
+<hr />
+<h3 id="3">ステップ 3：アーキテクチャを分析する</h3>
+<p>続行すると、Bob がサブタスク <strong>アプリケーションアーキテクチャを分析する</strong> を開始します。Bob は既存のソースを読み、次の 3 つのファイルを作成します。</p>
+<table>
+<thead>
+<tr>
+<th>ファイル</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>architecture.md</code></td>
+<td>既存アプリケーションのアーキテクチャの説明</td>
+</tr>
+<tr>
+<td><code>architecture-diagram.mmd</code></td>
+<td>アーキテクチャ図（Mermaid 形式）</td>
+</tr>
+<tr>
+<td><code>ui-modernization-options.json</code></td>
+<td>UI モダナイゼーションのオプション</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="アーキテクチャの分析" src="../assets/images/java_premium_lab3/04_architecture_analysis.png" /></p>
+<p>動画の収録では、約 19 秒でプロジェクト構造（2 フォルダー、21 ファイル）を調べ終えています。ドキュメントの作成が完了するまで待ちましょう。</p>
+<hr />
+<h3 id="4ui">ステップ 4：UI モダナイゼーションプロジェクトを設定する</h3>
+<p>分析が終わると、<strong>UI モダナイゼーションプロジェクトを設定する</strong> のフォームが表示されます。次の表の値を入力します。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>設定値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>フロントエンドのモダナイゼーション</strong></td>
+<td>オン</td>
+</tr>
+<tr>
+<td><strong>バックエンドのモダナイゼーション</strong></td>
+<td>オン</td>
+</tr>
+<tr>
+<td><strong>フロントエンドフレームワーク</strong></td>
+<td><code>React</code>（候補: React / Vue.js / Angular）</td>
+</tr>
+<tr>
+<td><strong>フロントエンドデザインシステム</strong></td>
+<td><code>Material UI</code></td>
+</tr>
+<tr>
+<td><strong>フロントエンドプロジェクトパス</strong></td>
+<td><code>src/main/webapp</code>（<strong>ディレクトリを選択</strong> で指定）</td>
+</tr>
+<tr>
+<td><strong>バックエンドフレームワーク</strong></td>
+<td><code>Jakarta EE style Rest Services</code></td>
+</tr>
+<tr>
+<td><strong>バックエンドプロジェクトパス</strong></td>
+<td><code>src/main/java/com</code>（<strong>ディレクトリを選択</strong> で指定）</td>
+</tr>
+</tbody>
+</table>
+<p>フロントエンドフレームワークの候補はドロップダウンに表示されます。</p>
+<p><img alt="フロントエンドフレームワークの候補" src="../assets/images/java_premium_lab3/05_stack_options.png" /></p>
+<p><strong>ディレクトリを選択</strong> をクリックすると、フォルダー選択ダイアログが開きます。フォルダーを選ぶと「1 選択済み」と表示されます。</p>
+<p><img alt="設定値を入力した状態" src="../assets/images/java_premium_lab3/06_stack_setup_done.png" /></p>
+<p>設定が終わったら <strong>プロジェクトを設定する</strong> をクリックします。</p>
+<hr />
+<h3 id="5-jakarta-ee-rest-api">ステップ 5：バックエンドを Jakarta EE の REST API に移行する</h3>
+<p><strong>Backend Migration</strong> のサブタスクが始まります。Bob は To-Do リストを作成し、既存の Model と Repository はそのまま使って、REST API を追加します。</p>
+<ul>
+<li>既存の <code>src/main/java/com</code> に REST リソースを追加する（バックエンドのパスは変えない）</li>
+<li>Struts の依存関係を削除し、Jakarta EE REST（JAX-RS）と MicroProfile OpenAPI に置き換える</li>
+<li><code>pom.xml</code> を Liberty Maven Plugin と Jakarta EE REST 用に更新する</li>
+<li><code>server.xml</code> に <code>restfulWS-3.1</code> の機能を追加する</li>
+</ul>
+<p>Bob は古い Struts の <code>action</code> パッケージも削除します。古い Action クラスは <code>ActionSupport</code> に依存しているため、Struts を外すとコンパイルエラーになります。REST リソースで置き換え済みなので、<code>action</code> パッケージのクラスは不要です。</p>
+<p>Bob は <code>mvn clean package -q 2&gt;&amp;1 | tail -50</code> でビルドを確認し、エラーが出ればその場で修正して、ビルドが成功するまで繰り返します。</p>
+<p>ビルドが成功すると、Bob がアプリケーションの起動コマンドを提示します。ターミナルで実行してください。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span>liberty:run
+</span></code></pre></div>
+<p><img alt="アプリケーションの起動コマンド" src="../assets/images/java_premium_lab3/07_backend_run_prompt.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>初回の起動は Maven ビルドを含むため、2〜3 分ほどかかります。ターミナルに <code>CWWKF0011I: The defaultServer server is ready to run a smarter planet.</code> と表示されれば起動は完了です。</p>
+</div>
+<p>起動したら、ブラウザーで次の Swagger UI を開きます。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>http://localhost:9081/simple-pharmacy/openapi/ui
+</span></code></pre></div>
+<p><img alt="Swagger UI の確認" src="../assets/images/java_premium_lab3/08_backend_swagger.png" /></p>
+<p>Bob が「After running the command, has the jakarta-ee application started successfully?」と質問するので、ターミナルの結果に合う選択肢を選びます。</p>
+<ul>
+<li><strong>Yes, the application started successfully with no errors.</strong></li>
+<li><strong>The application started but I see some warnings in the logs.</strong></li>
+<li><strong>The application failed to start. Here are the errors: [paste errors]</strong></li>
+</ul>
+<p>起動に失敗した場合は、ターミナルのエラーを選択肢の <strong>[paste errors]</strong> に貼り付けて Bob に送ります。エラーの例は次のとおりです。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[INFO] [ERROR   ] SRVE0321E: The [struts2] filter did not load during start up.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[INFO] Filter [struts2]: Could not find required filter class - org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter.class
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[INFO] [ERROR   ] SRVE0321E: The [com.pharmacy.rest.CorsFilter] filter did not load during start up.
+</span></code></pre></div>
+<hr />
+<h3 id="6">ステップ 6：フロントエンドをセットアップする</h3>
+<p><strong>Frontend Setup</strong> のサブタスクで、Bob は次の作業を行います。</p>
+<ul>
+<li><code>architecture.md</code> と既存の REST API を読み、アプリケーションの構成を把握する</li>
+<li>To-Do リストを作成し、フロントエンドのプロジェクトを <code>src/main/webapp</code> に作成する</li>
+<li>依存関係をインストールし、ビルドを実行する（チャンクサイズに関する表示は MUI のバンドルサイズによるもので、エラーではありません）</li>
+<li><code>README.md</code> に起動方法を書く</li>
+</ul>
+<p>準備ができると、Bob が次の起動コマンドを提示します。ターミナルで実行してください。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>&lt;プロジェクトのパス&gt;/src/main/webapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</span></code></pre></div>
+<p><img alt="フロントエンドの起動確認" src="../assets/images/java_premium_lab3/09_app_start_prompt.png" /></p>
+<p>ブラウザーで <strong>http://localhost:5173</strong> を開きます（Vite の既定ポート）。</p>
+<p>ホームページが表示され、テーマが反映されていれば、Bob の質問に「Yes, the application started successfully. The landing page loads and theming works properly.」を選びます。表示に問題がある場合は、その内容を選択肢に貼り付けて Bob に伝えてください。</p>
+<hr />
+<h3 id="7">ステップ 7：コンポーネントとホームページを作る</h3>
+<p><strong>Frontend Components &amp; Home Page</strong> のサブタスクでは、Bob が共通コンポーネントと画面を作ります。動画では次のような作業が行われました。</p>
+<ul>
+<li>共通コンポーネント（<code>StatusChip</code>、<code>LabelValue</code>）を作成する</li>
+<li>処方箋フォーム用の <code>useFormValidation</code> フックを作成する</li>
+<li><code>AppLayout</code> にアプリのタイトルとフッターを追加する</li>
+<li><code>DashboardPage</code> にステータスの色分けチップなどを追加する</li>
+</ul>
+<p>作業が完了すると「すべてのタスクが完了しました！」と表示され、動作確認の質問が出ます。</p>
+<h4 id="404">404 エラーが出た場合（動画の例）</h4>
+<p>この段階で、ブラウザーの <strong>薬品在庫管理</strong> 画面は一覧が空のままで、Bob のチャットには <code>Request failed with status code 404</code> が表示されました。画面のエラーを Bob に伝えると、Bob はバックエンドの状態を調べます。</p>
+<p><img alt="404 エラーの発生" src="../assets/images/java_premium_lab3/10_frontend_404.png" /></p>
+<p>Bob は <code>Context Root Not Found</code> の原因を次のように特定し、修正しました。</p>
+<p><img alt="原因と修正のまとめ" src="../assets/images/java_premium_lab3/11_context_root_fix.png" /></p>
+<ul>
+<li><strong>原因</strong>: <code>server.xml</code> の <code>&lt;application&gt;</code> 要素に <code>context-root</code> 属性がなく、Liberty がファイル名の <code>simple-pharmacy.war</code> をそのままコンテキストルートとして使っていた</li>
+<li><strong>修正</strong>: <code>src/main/liberty/config/server.xml</code> に <code>context-root</code> を設定し、<code>target/liberty/wlp</code> にも反映する</li>
+<li><strong>確認</strong>: <code>http://localhost:9081/simple-pharmacy/api/dashboard</code> が HTTP 200 を返す。フロントエンドの <code>/api</code> のプロキシ先（<code>/simple-pharmacy/api</code>）も一致している</li>
+</ul>
+<p>Liberty は <code>server.xml</code> の変更を自動で再読み込みするため、動画ではサーバーを再起動せずに確認しています。</p>
+<hr />
+<h3 id="8">ステップ 8：ページとバックエンドの連携を確認する</h3>
+<p><strong>Frontend Pages &amp; Backend Integration</strong> のサブタスクでは、Bob が既存のページ（<code>PrescriptionListPage</code>、<code>DashboardPage</code>、<code>PrescriptionCreatePage</code>、<code>PrescriptionDetailPage</code>）を確認し、画面と API をつなぎます。<code>npm run build</code> でビルドを確認したあと、動作確認のための起動コマンドを提示します。</p>
+<p>ブラウザーで <strong>薬品在庫管理</strong> の一覧に薬品データ（MED001 〜 MED008）が表示されれば、API との連携は正常です。</p>
+<p><img alt="薬品在庫管理の一覧" src="../assets/images/java_premium_lab3/12_frontend_medicines.png" /></p>
+<p>Bob の質問には、画面の状態に合う選択肢で答えます。すべてのページが動き、ナビゲーションも問題なければ「Yes, the application is working perfectly. All pages load correctly, navigation works as expected.」を選びます。</p>
+<hr />
+<h3 id="9">ステップ 9：両方のアプリケーションを検証する</h3>
+<p><strong>Validation</strong> のサブタスクで、Bob はまず README を読み、使用するポートを確認します。</p>
+<ul>
+<li><strong>バックエンド</strong>（Jakarta EE / Liberty）: <code>9081</code></li>
+<li><strong>フロントエンド</strong>（React / Vite）: <code>5173</code></li>
+</ul>
+<p>ポートの確認では、Bob が次のコマンドを実行するため承認を求められます。</p>
+<p><img alt="ポートの確認コマンドの承認" src="../assets/images/java_premium_lab3/13_validation_command_approval.png" /></p>
+<p>このコマンドは、指定したポートを使っているプロセスを一覧するものです。<strong>一度だけ承認</strong> を選ぶと、この 1 回だけ実行されます。</p>
+<p>続いて、Bob が「Did both applications start successfully? Can you access the frontend in your browser and interact with it?」と質問します。</p>
+<p><img alt="両方のアプリケーションの確認" src="../assets/images/java_premium_lab3/14_validation_check.png" /></p>
+<p>Swagger UI とフロントエンドを実際に開いて確認し、結果に合う選択肢を選びます。動作確認の最後に、ダッシュボードで処方箋の件数や在庫の情報が表示されることも確認してください。</p>
+<p><img alt="ダッシュボード" src="../assets/images/java_premium_lab3/15_dashboard_final.png" /></p>
+<hr />
+<h3 id="10">ステップ 10：アーキテクチャ図とサマリーを確認する</h3>
+<p>最後に Bob が UI モダナイゼーションのアーキテクチャ図（Mermaid）を生成し、結果をサマリーにまとめます。</p>
+<p><img alt="モダナイゼーションのサマリー" src="../assets/images/java_premium_lab3/16_modernization_summary.png" /></p>
+<p>サマリーには次の内容が含まれます。</p>
+<ul>
+<li>UI を Struts から React に移行したこと</li>
+<li>Material UI のデザインシステムを統合したこと</li>
+<li>Jakarta EE バックエンドをセットアップしたこと</li>
+<li>サブタスクごとのコスト（実行のたびに変わります）</li>
+</ul>
+<p>「Java モダナイゼーションワークフローが完了しました」と表示されたら、このラボは完了です。</p>
+<hr />
+<h2 id="5">5. トラブルシューティング</h2>
+<h3 id="bob-java">Bob のターミナルで Java バージョンが期待と異なる</h3>
+<p><strong>症状</strong>: Bob のターミナルで <code>java -version</code> が予期しないバージョンを表示する</p>
+<p><strong>対処法</strong>: <code>sdk list java</code> で利用可能な Java 21 の識別子を確認し、Bob のターミナルで以下を実行してください。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span>&lt;識別子&gt;
+</span></code></pre></div>
+<p><code>sdk use</code> はシェルスコープのため、ターミナルタブや Bob が独立して開くターミナルには適用されません。各シェルで個別に実行する必要があります。</p>
+<hr />
+<h3 id="liberty">Liberty の起動が完了しない</h3>
+<p><strong>症状</strong>: <code>mvn liberty:run</code> の後、<code>CWWKF0011I</code> が表示されない</p>
+<p><strong>対処法</strong>: 初回は Maven ビルドを含むため、2〜3 分ほどかかります。それでも完了しない場合は、ターミナルのログを Bob チャットに貼り付けてください。</p>
+<hr />
+<h3 id="404_1">ブラウザーで 404 エラーが出る、一覧が空になる</h3>
+<p><strong>症状</strong>: <code>Request failed with status code 404</code> が表示される、または薬品一覧が空のままになる</p>
+<p><strong>対処法</strong>: ステップ 7 の手順で Bob にエラーを伝えてください。<code>server.xml</code> の <code>context-root</code> の設定が原因の場合があります。</p>
+<hr />
+<h3 id="_8">ポートが使用中になっている</h3>
+<p><strong>症状</strong>: ポート <code>5173</code>（フロントエンド）または <code>9081</code>（バックエンド）が使用中で起動できない</p>
+<p><strong>対処法</strong>: 既存のプロセスを停止してから、もう一度起動してください。使用中のプロセスは、Bob に <code>lsof -ti :&lt;ポート番号&gt;</code> で確認を依頼できます。</p>
+<hr />
+<h3 id="_9">バックエンドのビルドエラー</h3>
+<p><strong>症状</strong>: <code>mvn clean package</code> が失敗する</p>
+<p><strong>対処法</strong>: エラーの完全な出力を Bob チャットに貼り付けてください。Bob が自律的に修正します。</p>
+<hr />
+<h3 id="npm">フロントエンドの npm エラー</h3>
+<p><strong>症状</strong>: <code>npm run dev</code> でエラーが発生する</p>
+<p><strong>対処法</strong>: エラー内容を Bob チャットに貼り付けてデバッグしてもらいます。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># node_modules をクリーンインストールする場合</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">cd</span><span class="w"> </span>src/main/webapp
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>rm<span class="w"> </span>-rf<span class="w"> </span>node_modules<span class="w"> </span>package-lock.json
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>npm<span class="w"> </span>install
+</span></code></pre></div>
+<hr />
+<h2 id="6_1">6. まとめ</h2>
+<p>Lab 3（Java Modernization ワークフローの UI Modernization）を Simple Pharmacy アプリケーションに適用して完了しました。</p>
+<ul>
+<li>✅ IBM Bob で Java Modernization ワークフローを開始し、UI Modernization を選択する</li>
+<li>✅ 設定フォームで React、Material UI、Jakarta EE style Rest Services を指定する</li>
+<li>✅ Bob と一緒に REST バックエンドとフロントエンドを作成し、起動して確認する</li>
+</ul>
+<h3 id="_10">重要なポイント</h3>
+<ol>
+<li><strong>Java Modernization ワークフロー</strong>: ワークフローの種類を選ぶと、Bob が分析から検証まで段階的に進める</li>
+<li><strong>設定フォームでスタックを決める</strong>: フロントエンド、デザインシステム、バックエンドの値を入力して、Bob の作業範囲を決める</li>
+<li><strong>段階的なアプローチ</strong>: 分析 → バックエンド移行 → フロントエンド構築 → 検証の順で進み、各段階の結果を確認できる</li>
+<li><strong>実行時のエラーは Bob と一緒にデバッグ</strong>: 404 のようなエラーは、画面やログを Bob に貼り付けて修正してもらう</li>
+<li><strong>インタラクティブなガイド</strong>: 質問に答えながら進めることで、Bob が修正を繰り返して完成へ導く</li>
+</ol>
+<h3 id="_11">次のステップ（オプション）</h3>
+<p>追加時間がある場合や、さらに探求したい場合：</p>
+<p><strong>生成された UI の最適化</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>作成した React フロントエンドの UI を最適化してください。
+</span></code></pre></div></p>
+<p><strong>コード品質のレビュー</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>移行されたコードのアーキテクチャ、保守性、エラーハンドリング、コード構成、ドキュメントの完成度をレビューしてください。
+</span></code></pre></div></p>
+<p><strong>モダナイゼーションサマリーの作成</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>モダナイズされた内容、主要なアーキテクチャの変更点、既知の問題、次のステップを含む MIGRATION_SUMMARY.md を作成してください。
+</span></code></pre></div></p>
+<hr />
+<p>次は <strong><a href="../java_premium_lab4/">Lab 4 — ユニットテストの生成</a></strong> に進みましょう。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
