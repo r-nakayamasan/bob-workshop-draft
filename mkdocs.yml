@@ -19,6 +19,12 @@ nav:
       - Bob × Backlog MCP: backlog_lab.md
       - Java Premium Package:
           - 準備編: java_premium_00_preparation.md
+          - ワークショップ概要: java_premium_overview.md
+          - Lab 1 - Liberty への移行: java_premium_lab1.md
+          - Lab 2 - Java 21 へのアップグレード: java_premium_lab2.md
+          - Lab 3 - UI のモダナイゼーション: java_premium_lab3.md
+          - Lab 4 - ユニットテストの生成: java_premium_lab4.md
+          - Lab 5 - 脆弱性の検出と修正: java_premium_lab5.md
   - ハンズオン (v1・旧バージョン):
       - Lab 1 - 要件定義書からの実装 (v1・旧バージョン): 03_lab1.md
       - Lab 2 - 既存コードの読み込みと機能追加 (v1・旧バージョン): 04_lab2.md
